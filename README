@@ -1,0 +1,11 @@
+///////////////////////////////////////////////
+Project Name: Twitter Sentiment Analysis
+Project Type: Final Project
+Course: Python Programming (02820)
+Semester: Fall 2011
+School: Danmarks Tekniske Universitet (DTU)
+Student: Elvar Orn Unnthorsson
+///////////////////////////////////////////////
+
+Project Description:
+Twitter crawler that performs a sentiment analysis to determine whether tweets about something/someone are positive or negative.
