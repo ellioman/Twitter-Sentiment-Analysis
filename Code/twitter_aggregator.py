@@ -18,7 +18,7 @@ from os.path import join as pjoin
 
 class twitter_aggregator:
 	def __init__( self ):
-		self.data = []
+		self.search_results = []
 		self.english_tweets_count = 0
 		self.raw_data_directory_name = "raw_mining_data"
 		self.filtered_data_directory_name = "filtered_mining_data"
@@ -44,26 +44,26 @@ class twitter_aggregator:
 		
 		for term in search_terms:
 			for page in range(1,pages+1):
-				search_results.append(twitter_search.search(q=term, rpp=results_per_page, page=page))
+				self.search_results.append(twitter_search.search(q=term, rpp=results_per_page, page=page))
 		
 		done_searching = True
-		#print "len(search_results) =",len(search_results)
-		#print (search_results)
-		self.data = search_results
 	
 	
 	
 	def get_data(self, data_to_get = []):
 		"""docstring for get_data"""
 		tweet_list = []
-		for page in range( self.pages ):
-			for tweet in range( self.results_per_page ):
+		for search_result in self.search_results:
+			for tweet in range( len(search_result['results']) ):
 				tweet_data = []
+				
 				for data in data_to_get:
-					data_to_append = self.data[page]['results'][tweet][data]
+					data_to_append = search_result['results'][tweet][data]
 					if (type(data_to_append) == int): tweet_data.append( data_to_append )
 					else: tweet_data.append( data_to_append.encode('ascii', 'ignore') )
+				
 				tweet_list.append(tweet_data)
+		
 		return tweet_list
 	
 	
