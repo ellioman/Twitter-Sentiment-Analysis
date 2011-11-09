@@ -66,7 +66,7 @@ class HTMLCreator(object):
 		html = html_before_tweets + self.tweets + html_after_tweets
 		
 		# Create and save the html file
-		f = open( self.page_name, "wb")
+		f = open( pjoin(sys.path[0], "html", self.page_name), "wb")
 		f.write(Template("${data}").render(data=html))
 		f.close()
 	
@@ -179,8 +179,15 @@ class HTMLCreator(object):
 if __name__ == '__main__':
 	from twitter_aggregator import *
 	tweets = twitter_aggregator()
-	tweets.twitter_search( search_terms=["Wayne Rooney MUFC", "Wayne Rooney"], pages=1, results_per_page=60 )
+	search_terms = ["Wayne Rooney MUFC", "Wayne Rooney"]
+	tweets.twitter_search( search_terms, pages=1, results_per_page=60 )
 	data = tweets.get_data( data_to_get=['text', 'profile_image_url', 'from_user', 'source'] )
-	html_page = HTMLCreator( "DataMiningResults.html", "template.html", data )
+	
+	stats = {}
+	stats["search-parameters"] = search_terms
+	stats["tweets-count"] = len(data)
+	stats["positive-count"] = 666
+	stats["negative-count"] = 999
+	html_page = HTMLCreator( "DataMiningResults.html", "template.html", data, stats )
 	html_page.create_html()
 
