@@ -15,10 +15,10 @@ from html_creator import *
 
 
 #Key variables
-pages = 1
+pages = 5
 results_per_page = 100
 english_tweets_count = 0
-search_terms = ["Michael Carrick MUFC"]
+search_terms = ["Wayne Rooney MUFC", "Wayne Rooney"]
 html_filename = "DataMiningResults.html"
 template_filename = "template.html"
 
@@ -37,14 +37,15 @@ def main():
 	#raw_file, filtered_file = tweets.save_data( twitter_data, filtered_data )
 	#print "Saving data complete"
 	
-	print len( tweets.get_data( data_to_get=['text', 'profile_image_url', 'from_user'] ) )
+	# Get all the tweets/data
+	data = tweets.get_data( data_to_get=['text', 'profile_image_url', 'from_user'] )
 	
 	print "Creating HTML page..."
-	html_page = HTMLCreator( html_filename, template_filename, tweets.get_data( data_to_get=['text', 'profile_image_url', 'from_user'] ) )
+	html_page = HTMLCreator( html_filename, template_filename, data )
 	html_page.create_html()
-	print "Creating HTML page complete"
+	print "Creating HTML page complete\n"
 	
-	print "\n=======================\nData mining successful\n=======================\n"
+	print "=======================\nData mining successful\n=======================\n"
 
 
 if __name__ == '__main__':

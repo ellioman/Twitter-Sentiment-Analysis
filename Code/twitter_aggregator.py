@@ -29,6 +29,8 @@ class twitter_aggregator:
 		"""docstring for twitter_search"""
 		if search_terms == []: return ''
 		
+		self.pages = pages
+		self.results_per_page = results_per_page
 		twitter_search = twitter.Twitter(domain="search.twitter.com")
 		search_results = []
 		done_searching = False
@@ -45,7 +47,8 @@ class twitter_aggregator:
 				search_results.append(twitter_search.search(q=term, rpp=results_per_page, page=page))
 		
 		done_searching = True
-		
+		#print "len(search_results) =",len(search_results)
+		#print (search_results)
 		self.data = search_results
 	
 	
@@ -53,11 +56,13 @@ class twitter_aggregator:
 	def get_data(self, data_to_get = []):
 		"""docstring for get_data"""
 		tweet_list = []
-		for page in range( len(self.data) ):
-			for tweet in range( len(self.data[page]['results']) ):
+		for page in range( self.pages ):
+			for tweet in range( self.results_per_page ):
 				tweet_data = []
 				for data in data_to_get:
-					tweet_data.append( self.data[page]['results'][tweet][data].encode('ascii', 'ignore') )
+					data_to_append = self.data[page]['results'][tweet][data]
+					if (type(data_to_append) == int): tweet_data.append( data_to_append )
+					else: tweet_data.append( data_to_append.encode('ascii', 'ignore') )
 				tweet_list.append(tweet_data)
 		return tweet_list
 	
@@ -90,3 +95,6 @@ if __name__ == '__main__':
 	tweets = twitter_aggregator()
 	tweets.twitter_search( search_terms=['MUFC'], pages=2, results_per_page=2 )
 	print tweets.get_data( ['from_user', 'iso_language_code', 'from_user_id'] )
+	
+
+

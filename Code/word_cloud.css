@@ -45,16 +45,26 @@ body {
 }
 
 
-#cloud li.tag1 { font-size: 0.2em; font-weight: 100; }
-#cloud li.tag2 { font-size: 0.4em; font-weight: 200; }
-#cloud li.tag3 { font-size: 0.6em; font-weight: 300; }
-#cloud li.tag4 { font-size: 0.8em; font-weight: 400; }
-#cloud li.tag5 { font-size: 1.0em; font-weight: 500; }
-#cloud li.tag6 { font-size: 1.2em; font-weight: 600; }
-#cloud li.tag7 { font-size: 1.4em; font-weight: 700; }
-#cloud li.tag8 { font-size: 1.6em; font-weight: 800; }
-#cloud li.tag9 { font-size: 2.0em; font-weight: 900; }
-#cloud li.tag10 { font-size: 2.5em; font-weight: 900; }
+#cloud li.tag1 { font-size: 0.125em; font-weight: 100; }
+#cloud li.tag2 { font-size: 0.250em; font-weight: 200; }
+#cloud li.tag3 { font-size: 0.375em; font-weight: 300; }
+#cloud li.tag4 { font-size: 0.500em; font-weight: 400; }
+#cloud li.tag5 { font-size: 0.625em; font-weight: 500; }
+#cloud li.tag6 { font-size: 0.750em; font-weight: 600; }
+#cloud li.tag7 { font-size: 0.875em; font-weight: 700; }
+#cloud li.tag8 { font-size: 1.000em; font-weight: 800; }
+#cloud li.tag9 { font-size: 1.125em; font-weight: 900; }
+#cloud li.tag10 { font-size: 1.250em; font-weight: 900; }
+#cloud li.tag11 { font-size: 1.375em; font-weight: 100; }
+#cloud li.tag12 { font-size: 1.500em; font-weight: 200; }
+#cloud li.tag13 { font-size: 1.625em; font-weight: 300; }
+#cloud li.tag14 { font-size: 1.750em; font-weight: 400; }
+#cloud li.tag15 { font-size: 1.875em; font-weight: 500; }
+#cloud li.tag16 { font-size: 2.000em; font-weight: 600; }
+#cloud li.tag17 { font-size: 2.125em; font-weight: 700; }
+#cloud li.tag18 { font-size: 2.375em; font-weight: 800; }
+#cloud li.tag19 { font-size: 2.500em; font-weight: 900; }
+#cloud li.tag20 { font-size: 2.750em; font-weight: 900; }
 #cloud { 
 	padding: 10px; line-height: 2em; text-align: center; width:350px; text-align: center; 
 	margin: 0;
