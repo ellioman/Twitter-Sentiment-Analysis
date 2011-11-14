@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>currentDocument</key>
+	<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/master2010.tex</string>
+	<key>documents</key>
+	<array>
+		<dict>
+			<key>filename</key>
+			<string>file/summary.tex</string>
+			<key>lastUsed</key>
+			<date>2011-10-27T13:59:04Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>file/analysis_and_design.tex</string>
+			<key>lastUsed</key>
+			<date>2011-10-28T15:04:07Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>file/from_design_to_implementation.tex</string>
+			<key>lastUsed</key>
+			<date>2011-10-28T15:04:07Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>file/testing.tex</string>
+			<key>lastUsed</key>
+			<date>2011-10-27T13:59:04Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>file/users_guide.tex</string>
+			<key>lastUsed</key>
+			<date>2011-10-28T15:04:10Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>file/app1.tex</string>
+			<key>lastUsed</key>
+			<date>2011-10-27T13:53:14Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>file/app2.tex</string>
+			<key>lastUsed</key>
+			<date>2011-10-27T13:50:50Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>file/app3.tex</string>
+			<key>lastUsed</key>
+			<date>2011-10-27T13:50:50Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>master2010.tex</string>
+			<key>lastUsed</key>
+			<date>2011-10-28T15:04:10Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>README.txt</string>
+			<key>lastUsed</key>
+			<date>2011-10-27T13:37:47Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>style/thesislayout.sty</string>
+			<key>lastUsed</key>
+			<date>2011-10-27T14:09:09Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>style/Mythesis.sty</string>
+			<key>lastUsed</key>
+			<date>2011-10-27T13:47:12Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>style/thesisdef.sty</string>
+			<key>lastUsed</key>
+			<date>2011-10-27T13:47:09Z</date>
+		</dict>
+	</array>
+	<key>fileHierarchyDrawerWidth</key>
+	<integer>217</integer>
+	<key>metaData</key>
+	<dict>
+		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/analysis_and_design.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>23</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app1.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>11</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app2.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>16</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app3.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>16</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/from_design_to_implementation.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>23</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>3</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>23</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+		</dict>
+		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/summary.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>13</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/testing.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>23</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/users_guide.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>23</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/master2010.tex</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>20</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/style/thesislayout.sty</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>41</integer>
+				<key>line</key>
+				<integer>494</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>447</integer>
+		</dict>
+	</dict>
+	<key>openDocuments</key>
+	<array>
+		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/master2010.tex</string>
+		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/style/thesislayout.sty</string>
+		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/summary.tex</string>
+		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/analysis_and_design.tex</string>
+		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/from_design_to_implementation.tex</string>
+		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/testing.tex</string>
+		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/users_guide.tex</string>
+		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app1.tex</string>
+		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app2.tex</string>
+		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app3.tex</string>
+	</array>
+	<key>showFileHierarchyDrawer</key>
+	<true/>
+	<key>windowFrame</key>
+	<string>{{528, 19}, {1069, 1009}}</string>
+</dict>
+</plist>

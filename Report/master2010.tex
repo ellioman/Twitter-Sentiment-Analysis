@@ -1,0 +1,234 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Thesis template file  prepared by:
+%  Thyge Knüppel, tkn@elektro.dtu.dk, DTU Elektro, May 2008
+%  Based on the work of Jan Larsen, IMM, DTU (cf. http://www2.imm.dtu.dk/teaching/phd/)
+%
+%  CET June 2010 edited Charlotte K. Madsen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% Compilation: 
+% compilation using latex (i.e. via a ps file)
+%\documentclass[a4paper,11pt,twoside,openright,dvips]{book}
+
+% compilation using PDFLATEX - Note that pdflatex is known to have issues with
+% some of the pstricks-packages
+\documentclass[a4paper,11pt,twoside,openright,pdftex]{book}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input information for cover, titlepages:
+% Sould be EDITED to match your work!
+
+\def\ThesisAuthor{Elvar Orn Unnthorsson, 101403}%multiple authors separated by "\\"
+                         %If there are multiple authors adjust the \vspace 
+                         %in thesislayout.sty as necessary
+\def\ThesisAuthorForHyperref{Elvar Orn Unnthorsson, 101403}%list of authors for pdf
+                                %properties. Multiple authors separated by ","
+\def\ThesisTitle{A simple Cinema Booking System} %project title
+\def\Subtitle{02115 Java Programming} %subtitle - if any
+\def\thesiskeywords{latex template, other keywords} %keywords for the pdf file
+\def\thesissubject{} %only for pdf properties - doesn't appear on printed
+                     %versions
+\def\Supervisor{Supervisor 1\\Supervisor 2} %list of supervisors. multiple
+                                %supervisors are separated by "\\"
+\def\projecttype{2. November 2011} %type of project (see README file
+                                %for explanation)
+\def\ISBNNUMBER{} %type \ISBNNUMBER{ISBN: xxx} if your project has one
+\def\DatePublished{Date published} %date of publication
+\def\Klasse{1 (public)} %project class (see README file for explanation)
+\def\Degree{Master of Science in Digital Media} %obtained degree (see
+                                                %README file for explanation)
+\def\ECTSpoints{30} %# of ECTS points 
+\def\Udgave{First} %edition
+\def\Owner{Elvar Orn Unnthorsson, 2011} %name of copyright and year
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% Change settings: (compile twice )%%%%%%%%%%%%%%%%%%%%%%
+\def\thesisversion{final} %OBS: choose this for final version (official set of
+                          %title pages) 
+%\def\thesisversion{draft} %OBS: choose this for draft version (simple title
+                           %page and no info page)
+
+\def\thesislinks{no}%OBS: choose this for paper version (no colored links) 
+%\def\thesislinks{yes}%OBS: choose this for online version (with links)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%  For changing language: (compile twice -first time gives errors)%%%
+\def\thesislanguage{en} %OBS: compile document for English 
+%\def\thesislanguage{da}  %OBS:  compile document for Danish
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Load style definitions, packages, etc:
+	\usepackage{style/thesisdef} 		% packages  listings aso
+	\usepackage{style/thesislayout} 	% layout; headings, pagemargin, theorems aso
+	\usepackage{style/Mythesis} 	  	% Locals editings to only your thesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END of premable
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{document}
+
+%%%%%%%%%%%%%%%%% Edit ONLY for printing type:
+% Front matter:
+	\frontmatter
+
+  \ifx\thesisversion\printversion
+	% for final version include standard dtu cover pages
+	\pagenumbering{alph}%dummy numbering for pdf-file (numbering set as a
+                    %pdf-property and is NOT visible on the document). The
+                    %hyperref package complains if duplicate numbering exists
+	\coverpages    %generates the first four pages (thesislayout.sty)
+	\else
+%for draft version use simple title page:
+	\title{\ThesisTitle{} - \Subtitle{}}
+	\author{\ThesisAuthor}
+	\thispagestyle{empty}
+	\maketitle
+	%\clearpage{\thispagestyle{empty}\cleardoublepage}
+   \fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREFACE CHAPTERS INCLUDE: files are in folder "file"
+	\pagenumbering{roman}
+	\pagestyle{empty} 	%For first few pages %\markboth{}{}
+	
+%  \ifx\thesisversion\printversion % no resumes in draft-version
+%% Ad to List of Contents:
+%\chapter*{Abstract, Resumé}
+%	\ifx\thesislanguage\danishlang
+%	\addcontentsline{toc}{chapter}{Resumé}
+%	\else
+%	\addcontentsline{toc}{chapter}{Abstract}
+%	\fi
+%\input{file/abstract}
+
+%% Ad to List of Contents:
+%\chapter*{Resumé, Abstract}
+%	\ifx\thesislanguage\danishlang
+%	\addcontentsline{toc}{chapter}{Abstract}
+%	\else
+%	\addcontentsline{toc}{chapter}{Resumé}
+%	\fi
+%\input{file/resume}
+%  \fi
+
+% if a chapter is wanted BEFORE lists
+%% Ad to List of Contents:
+%\chapter*{Preface, Forord}
+%	\ifx\thesislanguage\danishlang
+%	\addcontentsline{toc}{chapter}{Forord}
+%	\else
+%	\addcontentsline{toc}{chapter}{Preface}
+%	\fi
+%\input{file/preface} %lines above can be moved into this file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TOC,LOF,LOT and SETUP HEADER: (should not be edited)
+	\pagestyle{fancyplain}		%'plain' enable center-food-pagenumber only
+							%'fancyplain' gives right-left numbers
+	%\cleardoublepage 
+	\phantomsection  	% makes pdf-hyperref work in adobe
+	\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents  
+
+%  \ifx\thesisversion\printversion	
+%	\cleardoublepage 	\phantomsection  	% makes pdf-hyperref work in adobe
+%	\ifx\thesislanguage\danishlang
+%	\addcontentsline{toc}{chapter}{Figurliste}
+%	\else
+%	\addcontentsline{toc}{chapter}{List of Figures}
+%	\fi
+%\listoffigures
+
+%	\cleardoublepage 	\phantomsection  	% makes pdf-hyperref work in adobe
+%	\ifx\thesislanguage\danishlang
+%	\addcontentsline{toc}{chapter}{Tabelliste}
+%	\else
+%	\addcontentsline{toc}{chapter}{List of Tables}
+%	\fi
+%\listoftables
+%  \fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{fancy:frontend} %for 'of page /x'
+%\clearpage{\thispagestyle{empty}\cleardoublepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MAIN CHAPTERS INCLUDED FROM FOLDER  "file":
+	\mainmatter %\setcounter{page}{1}\pagenumbering{arabic} if mainmatter fails
+	\pagestyle{fancytext}
+
+% if a chapter is wanted after lists or other unnumbered chapter
+%% Ad to List of Contents (can also be the first entry after \chapter in the file:
+%	\cleardoublepage 
+%	\phantomsection
+%	\addcontentsline{toc}{chapter}{Introduction}
+%	\markboth{Preface}{}
+%\input{file/introduction} 
+	
+\input{file/summary}
+\input{file/analysis_and_design}
+\input{file/from_design_to_implementation}
+\input{file/testing}
+\input{file/users_guide}
+
+%\include{file/conclusion}
+%\include{file/...}
+%\input{file/subsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY: Build - bibtex to renew
+%
+%	\clearpage{\thispagestyle{empty}\cleardoublepage} \phantomsection 
+%	\ifx\thesislanguage\danishlang
+%	\addcontentsline{toc}{chapter}{Litteratur}
+%	\else
+%	\addcontentsline{toc}{chapter}{Bibliography}
+%	\fi
+%	\bibliographystyle{plainnat}
+%\bibliography{bibbase}
+
+%% Ad to Runin headings:
+%	\ifx\thesislanguage\danishlang
+%	\markboth{Litteratur}{}
+%	\else
+%	\markboth{Bibliography}{}
+%	\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDIX:
+\clearpage{\thispagestyle{empty}\cleardoublepage} 
+\phantomsection 
+\appendix	
+\ifx\thesislanguage\danishlang
+	\addcontentsline{toc}{chapter}{Appendiks}
+\else
+	\addcontentsline{toc}{chapter}{Appendix}
+\fi
+
+\input{file/app1} 
+\input{file/app2} 
+\input{file/app3} 
+%\input{file/...}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{fancy:mainend} %for 'of page /x'
+\clearpage{\thispagestyle{empty}\cleardoublepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BACK MATTER:
+%	\backmatter
+%	\ifx\thesisversion\printversion
+%	\makebackpage %generates the backmatter (thesislayout.sty)
+%	\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

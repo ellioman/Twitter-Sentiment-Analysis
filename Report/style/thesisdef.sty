@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Loads all the packages and the options
+% Should only be edited with carefull hand!
+% CET 2010 edited Charlotte K. Madsen
+
+
+%%%%%%%%%%%%%%%% do NOT modify %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				\def\danishlang{da}
+				\def\printversion{final}
+				\def\netversion{yes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{style/thesisdef}
+
+% ams math
+\usepackage{amsmath,amssymb}
+\usepackage[amsmath,hyperref,thmmarks]{ntheorem}
+\usepackage[amsmath,thmmarks]{ntheorem}
+
+% better fonts in pdf-versions
+\usepackage{lmodern}	%new 2009
+\usepackage[T1]{fontenc} 
+\usepackage{textcomp}    %new 2009
+
+\ifx\thesislanguage\danishlang
+\usepackage[danish]{babel}
+\else
+\usepackage[english]{babel}
+\fi
+
+\usepackage[latin1]{inputenc}
+\usepackage{verbatim}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{ifpdf}
+\usepackage{fancyhdr}
+%\usepackage{lastpage} % for page xx of \pageref{LastPage}
+
+\usepackage{rotating}%sideways envirenment
+\usepackage{lscape} %landscape
+\usepackage{psfrag,color} %laprint
+\usepackage{pstricks} %basic pstricks support
+%\usepackage{pst-node,pst-text,pst-grad,pst-circ,gastex} %advanced features
+%(unsure if they work with pdflatex)
+\usepackage{curves} %curves in picture environment
+
+\usepackage[small,hang,bf,up]{caption}
+\usepackage[round,sort&compress]{natbib} % references. optional options
+\usepackage{url} %for list of references
+
+\ifx\thesislanguage\danishlang
+\usepackage[intoc,danish,cfg]{nomencl}
+\else
+\usepackage[intoc,english,cfg]{nomencl}
+\fi
+\makenomenclature
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+            
+
+
+% input files/scripts
+\usepackage{listings}
+\lstset{% general command to set parameter(s)
+    language=Matlab,                               % definer inputsproget
+    basicstyle=\footnotesize,                      % print whole listing small
+    keywordstyle=\bfseries,                        % underlined bold black keywords
+    identifierstyle=,                              % nothing happens
+    commentstyle=,                                  % white comments
+    stringstyle=\ttfamily,                         % typewriter type for strings
+    showstringspaces=false,                        % no special string spaces
+    numbers=left,                                  % side for linenumbers
+    numberstyle=\tiny,                             % numbersize
+    stepnumber=1,                                  % steps in numbering
+    numbersep=5pt,                                 % distance to listings
+    extendedchars=true,                            % danske tegn
+    breaklines=true,                               % auto. linjeskift
+    prebreak=...}                                  % indiker linjeskift med...
+
+%\usepackage{mcode}
+\usepackage{graphicx,subfig}
+
+%    LEVEL    : An entry is produced only if LEVEL < or = value of 
+%               'tocdepth' counter.  Note, \chapter is level 0, \section
+%               is level 1, etc.
+\setcounter{tocdepth}{2} 
+\setcounter{secnumdepth}{3} 
+
+
+%prevent a single word from occupying a whole page
+%\clubpenalty=9999 
+%\widowpenalty=9999
+
+%change margin locally to insert wide figures
+\def\quote{\list{}{\rightmargin\leftmargin}\item[]}
+\let\endquote=\endlist
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+%\begin{changemargin}{-1cm}{.5cm} "wide figure or table" \end{changemargin}
+
+
+% Links on/off for netversion
+\ifx\thesislinks\netversion
+  \ifpdf
+     \usepackage[plainpages=false,pdftex]{hyperref} %theseoptions may be necessary for pdflatex
+   \else%
+     \usepackage[plainpages=false]{hyperref}%
+     \usepackage{breakurl}%
+  \fi
+%
+\hypersetup{pdftitle={\ThesisTitle},
+                pdfauthor={\ThesisAuthorForHyperref},%
+                pdfsubject={\thesissubject}, %
+                pdfkeywords={\thesiskeywords},%
+                colorlinks,%
+                linkcolor=red,%
+                citecolor=blue,%
+                breaklinks,%
+                linktocpage,%
+                bookmarksopen,%
+                bookmarksopenlevel=1,%
+                bookmarksnumbered}% 
+    \else
+    %\hypersetup{colorlinks,%
+    %            linkcolor=black,%
+    %            citecolor=black,}% 
+   \newcommand{\phantomsection}{}
+\fi
+
+%NOTE algorithm MUST be loaded after hyperref or things DO break!!
+%The counter for algorithms is not recognized by hyperref.
+\usepackage{algorithm,algorithmic}
+

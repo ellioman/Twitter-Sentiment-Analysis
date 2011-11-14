@@ -1,0 +1,501 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setup headings and title pages for chapters
+%
+% CET 2009 edited Charlotte K. Madsen
+%
+%IMM PHD THESIS LAYOUT
+%Adopted from Henrik Aalborg Nielsen and Thomas Fabricius
+%Jan Larsen, IMM, DTU, Nov 2003
+
+\ProvidesPackage{style/thesislayout}
+
+%%%%%%%%%%%%%%%%%%%%%%%   page geometry
+\setlength{\parskip}{0.5\baselineskip}
+\setlength{\parindent}{0pt}
+
+%%%% MORE TEXT ON PAGES and no bad boxes
+%% Adjust the pagemargins to double
+\addtolength{\oddsidemargin}	{1cm} 
+\addtolength{\evensidemargin}	{-2cm}
+\addtolength{\textwidth}		{1.2cm}
+\addtolength{\textheight}	{2.5cm} 
+\addtolength{\voffset}		{-1cm}
+\addtolength{\footskip}		{1cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%   Headings:
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{\thesection.\ #1}}}
+%\renewcommand{\headrulewidth}{\iffloatpage{0pt}{0pt}} 
+
+\fancypagestyle{fancyplain}{% looks as ordinary plain
+\fancyhf{}
+\addtolength{\headheight}{1.8pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[RO,LE]{\sffamily\bfseries  \thepage/\pageref{fancy:frontend} }
+}
+
+\fancypagestyle{fancytext}{% 
+\fancyhead{} % clear all header fields
+\addtolength{\headheight}{1.8pt}
+\fancyhead[RO,LE]{\nouppercase{\rightmark}}
+\fancyhead[LO,RE]{\nouppercase{\leftmark}}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\sffamily\bfseries\thepage/\pageref{fancy:mainend}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{fancychapter}{% the page with chapters in main
+\fancyhf{}
+\addtolength{\headheight}{1.8pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[RO,LE]{\sffamily\bfseries  \thepage/\pageref{fancy:mainend} }
+\markboth{}{}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%   Chapters:
+\ifx\thesislanguage\danishlang
+\renewcommand{\chaptername}{K a p i t e l }
+\renewcommand{\appendixname}{A p p e n d i k s }
+\renewcommand{\nomname}{Nomenklatur}
+\else
+\renewcommand{\chaptername}{C h a p t e r }
+\renewcommand{\appendixname}{A p p e n d i x }
+\renewcommand{\nomname}{Nomenclature}
+\fi
+
+
+\def\@makechapterhead#1{% For fancy chapters
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+   \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \large\scshape \@chapapp \space\space \Huge\upshape\thechapter
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \flushleft\parbox{\textwidth}{\raggedleft \sffamily\Huge\bfseries  #1 }
+     \par\nobreak
+     \vskip 15pt
+     \hrule height 0.4pt
+    \vskip 65\p@ %length from line to text
+  }
+  \thispagestyle{fancychapter}}
+
+\def\@makeschapterhead#1{% For plain chapters in mainmatter to the left
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+   \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+      	\ifnum \thechapter =0
+      	%Style just for preface in mainmatter
+		  \Huge\upshape \phantom{1}  
+        	  \par\nobreak
+        	  \vskip 20\p@
+		  \interlinepenalty\@M
+    		  \flushleft\parbox{\textwidth}{\raggedleft \sffamily\Huge\bfseries  #1 }
+    		  \thispagestyle{fancychapter}
+      	\else
+      	  \sffamily\Huge\bfseries  #1 
+      	  \thispagestyle{fancychapter}
+      	  %Nom Bio and *
+      	\fi
+        \else
+	\sffamily\huge\bfseries  #1 
+	\thispagestyle{fancyplain}
+	% outside mainmatter
+	\fi
+   \fi
+    \par\nobreak
+    \vskip 15pt
+    \hrule height 0.4pt
+    \vskip 65\p@ %length from line to text
+  }
+}
+%
+% END - Setup headings and title pages for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define additional theorem environments
+% (remark,definition,example,assumption,proof) 
+%
+%theorem and definition
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\itshape}
+\theoremsymbol{\ensuremath{\diamondsuit}}
+\theoremseparator{:}
+\ifx\thesislanguage\danishlang
+\newtheorem{theorem}{Teorem}[chapter]
+\else
+\newtheorem{theorem}{Theorem}[chapter]
+\fi
+
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\theoremsymbol{\ensuremath{\diamondsuit}}
+\theoremseparator{}
+\theoremindent0.5cm
+\ifx\thesislanguage\danishlang
+\newtheorem{example}{Eksempel}[chapter]
+\else
+\newtheorem{example}{Example}[chapter]
+\fi
+
+
+
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\diamond}}
+\theoremseparator{:}
+\theoremindent0cm
+%\theoremprework{\bigskip}
+%\theorempostwork{\bigskip}
+\newtheorem{definition}{Definition}[chapter]
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\sc}
+\theorembodyfont{\upshape}
+\theoremseparator{}
+\theoremsymbol{\rule{1ex}{1ex}}
+\theoremindent0cm
+\ifx\thesislanguage\danishlang
+\newtheorem{proof}{Bevis}[chapter]
+\else
+\newtheorem{proof}{Proof}[chapter]
+\fi
+
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\theoremsymbol{\ensuremath{\diamondsuit}}
+\theoremseparator{}
+\theoremindent0cm
+\ifx\thesislanguage\danishlang
+\newtheorem{assumption}{Antagelse}[chapter]
+\else
+\newtheorem{assumption}{Assumption}[chapter]
+\fi
+
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont}
+\theorembodyfont{\upshape}
+\theoremsymbol{}
+\theoremseparator{}
+\theoremindent0.5cm
+\ifx\thesislanguage\danishlang
+\newtheorem{remark}{Bemærkning}[chapter]
+\else
+\newtheorem{remark}{Remark}[chapter]
+\fi
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setup front- and back matter and info-pages about the project
+%
+\newcommand{\makefrontpage}
+{\begin{titlepage}%
+    \begin{pspicture}(0cm,0cm)(\textwidth,\textheight)
+      %\psgrid
+
+      \rput[bl](-1cm,-1cm){\includegraphics{figure/dtu_informatics_A_UK}}
+      \rput[tr](15,24){\includegraphics{figure/dtu_A1_UK}}
+
+
+      \rput[tl](0.08\textwidth,0.85\textheight){
+        \begin{minipage}[t]{14cm}
+          
+          \textit{\textsf{\Large{
+                \begingroup
+                \tabcolsep -2mm
+                \begin{tabular}{l}
+                  \ThesisAuthor
+                \end{tabular}
+                \endgroup }}}
+          
+          \vspace*{0.18\textheight}
+          
+          \begin{flushleft}
+            \Huge{\textsf{\textbf{\ThesisTitle}}}
+          \end{flushleft}
+          
+          \vspace*{0.05\textheight}
+          
+          \begin{flushleft}
+            \LARGE{\textsf{\textbf{\Subtitle}}}
+          \end{flushleft}
+          
+          \vspace*{0.05\textheight}
+          \textsf{\Large{\projecttype}}
+        \end{minipage}}
+    \end{pspicture}
+   \end{titlepage}%
+  \setcounter{footnote}{0}
+  % 
+  \newpage\thispagestyle{empty}
+ }
+
+\newcommand{\makefrontpageempty}
+{\begin{titlepage}%
+    \setcounter{page}{3}%circumvent warning from hyperref about duplicate
+                        %pagenumbering
+\begin{pspicture}(0cm,0cm)(\textwidth,\textheight)
+      %\psgrid
+
+      \rput[tl](0.08\textwidth,0.85\textheight){
+        \begin{minipage}[t]{14cm}
+          
+          \textit{\textsf{\Large{
+                \begingroup
+                \tabcolsep -2mm
+                \begin{tabular}{l}
+                  \ThesisAuthor
+                \end{tabular}
+                \endgroup }}}
+          
+          \vspace*{0.18\textheight}
+          
+          \begin{flushleft}
+            \Huge{\textsf{\textbf{\ThesisTitle}}}
+          \end{flushleft}
+          
+          \vspace*{0.05\textheight}
+          
+          \begin{flushleft}
+            \LARGE{\textsf{\textbf{\Subtitle}}}
+          \end{flushleft}
+          
+          \vspace*{0.05\textheight}
+          \textsf{\Large{\projecttype}}
+        \end{minipage}}
+    \end{pspicture}
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+  \newpage\thispagestyle{empty}
+}
+
+\newcommand{\infopage}
+ {\begin{titlepage}%
+     \setcounter{page}{5}%circumvent warning from hyperref about duplicate
+                         %pagenumbering
+     \begin{pspicture}(0cm,0cm)(\textwidth,\textheight)
+       \rput[tl](0,\textheight){
+         \begin{minipage}[t]{14cm}
+          \textsf{\ThesisTitle ,\Subtitle}
+          \vspace*{0.11\textheight}
+          
+
+          \ifx\thesislanguage\danishlang
+          \textsf{\textbf{Rapporten er udarbejdet af}}
+          \else
+          \textsf{\textbf{This report was prepared by}}
+          \fi
+          
+          \textsf{
+            \begin{tabular}[t]{l}
+              \ThesisAuthor
+            \end{tabular}}
+          
+          \vspace*{0.08\textheight}
+          
+          \ifx\thesislanguage\danishlang          
+          \textsf{\textbf{Vejledere}}
+          \else
+          \textsf{\textbf{Supervisors}}
+          \fi
+          
+          \textsf{
+            \begin{tabular}[t]{l}
+              \Supervisor
+            \end{tabular}}
+          \vspace*{0.15\textheight}
+          
+        
+        \ifx\thesislanguage\danishlang
+          \textsf{
+            \begin{tabular}{ l l l}
+              \hline\\
+              Udgivelsesdato:&\quad &   \DatePublished      \\
+              \vspace{0.2cm} Klasse:        &      &   \Klasse      \\
+              \vspace{0.2cm} Udgave:        &      &   \Udgave      \\
+              \vspace{0.2cm} Bemærkninger:  &      &   \begin{minipage}[t]{10cm}
+                Denne rapport er indleveret som led i opfyldelse af kravene for
+                opnåelse af \Degree{} på Danmarks Tekniske Universitet. 
+                Rapporten repræsenterer \ECTSpoints{}~ECTS~point.
+              \end{minipage} \\
+              \vspace{0.2cm} Rettigheder:    &      &  \copyright\Owner \\
+            \end{tabular}}     
+          \else
+          \textsf{
+            \begin{tabular}{ l l l}
+              \hline\\
+              Release date:&\quad &   \DatePublished      \\
+              \vspace{0.2cm} Category:        &      &   \Klasse      \\
+              \vspace{0.2cm} Edition:        &      &   \Udgave      \\
+              \vspace{0.2cm} Comments:  &      &   \begin{minipage}[t]{10cm}
+                This report is part of the requirements to achieve the
+                \Degree{} at the Technical University of Denmark. 
+                This report represents \ECTSpoints{} ECTS points.
+              \end{minipage} \\
+              \vspace{0.2cm} Rights:    &      &  \copyright\Owner \\
+            \end{tabular}}          
+          \fi
+        \end{minipage}}
+       
+          \rput[tl](-0.08\textwidth,0.2\textheight){
+            \begin{minipage}[t]{14cm}
+              \ifx\thesislanguage\danishlang
+              \textsf{
+                \begin{tabular}{l}                
+                  Institut for Elektroteknologi\\
+                  Center for Elteknologi (CET)\\
+                  Danmarks Tekniske Universitet\\
+                  Elektrovej bygning 325\\
+                  2800 Kgs. Lyngby\\
+                  \vspace*{0.3cm}  Danmark\\
+                  www.elektro.dtu.dk/cet\\
+                  \hspace*{-0.3cm}
+                  \begin{tabular}{l l l}
+                    Tel:& \quad   &(+45) 45 25 35 00\\
+                    Fax:& \quad   &(+45) 45 88 61 11\\
+                  \end{tabular}\\
+                  E-mail: cet@elektro.dtu.dk\\
+                \end{tabular}
+              }          
+              \else       
+              \textsf{
+                \begin{tabular}{l}                
+                  Department of Electrical Engineering\\
+                  Centre for Electric Technology (CET)\\
+                  Technical University of Denmark\\
+                  Elektrovej building 325\\
+                  DK-2800 Kgs. Lyngby\\
+                  \vspace*{0.3cm}  Denmark\\
+                  www.elektro.dtu.dk/cet\\
+                  \hspace*{-0.3cm}
+                  \begin{tabular}{l l l}
+                    Tel:& \quad   &(+45) 45 25 35 00\\
+                    Fax:& \quad   &(+45) 45 88 61 11\\
+                  \end{tabular}\\
+                  E-mail: cet@elektro.dtu.dk\\
+                \end{tabular}
+              }
+              \fi
+              %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+              % Use this if more than one institute is involved with the 
+              % project. Adjust the coordinates for \rput to fit those of the 
+              % first partner
+              % 
+              % \rput[tl](7,10){
+              %   \begin{minipage}[t]{14cm}
+              %     \textsf{
+              %       \begin{tabular}{l}
+              %         Department of Electrical Engineering\\
+              %         Automation (AU)\\
+              %         Technical University of Denmark \\
+              %         Elektrovej building 326 \\
+              %         DK-2800 Kgs. Lyngby \\
+              %         \vspace*{0.3cm}  Denmark \\
+              %         www.elektro.dtu.dk/au\\
+              %         \hspace*{-0.3cm}
+              %         \begin{tabular}{l l l}
+              %           Tel:& \quad   &(+45) 45 25 35 50\\
+              %           Fax:& \quad   &(+45) 45 88 12 95\\
+              %         \end{tabular}\\
+              %         E-mail: bkp@oersted.dtu.dk\\
+              %       \end{tabular}
+              %     }
+              %   } 
+              % 
+              %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+            \end{minipage}
+          }
+          
+          
+        \end{pspicture}
+      \end{titlepage}%
+      \setcounter{footnote}{0}%
+      \newpage\thispagestyle{empty}
+    }
+
+
+\newcommand{\emptypage}
+{\begin{titlepage}%
+    \begin{pspicture}(0cm,0cm)(\textwidth,\textheight)
+    \end{pspicture}
+   \end{titlepage}%
+  \setcounter{footnote}{0}%
+ }
+
+
+\newcommand{\makebackpage}{
+  %disable header for the backmatter
+  \pagestyle{empty}
+   
+  % insert empty page
+  \begin{pspicture}(0cm,0cm)(\textwidth,\textheight)
+  \end{pspicture}
+  
+  %print backmatter
+  \begin{pspicture}(0cm,0cm)(\textwidth,\textheight)
+
+   \rput[t1](5.5cm,4cm){
+	\begin{minipage}[t]{14cm}
+           \textsf{
+        \ifx\thesislanguage\danishlang             
+		\begin{tabular}{l}
+            \LARGE{\textbf{www.elektro.dtu.dk}}\\
+            \\
+            \large Institut for Elektroteknologi\\
+            \large Center for Elteknologi (CET)\\ 
+            \large Danmarks Tekniske Universitet\\
+            \large Elektrovej bygning 325\\
+            \large 2800 Kgs. Lyngby\\
+            \large Danmark\\
+            \hspace*{-0.2cm}\large \begin{tabular}{l l l}
+              Tel:& \quad   &(+45) 45 25 38 00\\
+              Fax:& \quad   &(+45) 45 93 16 34\\
+            \end{tabular}\\
+            \large Email: info@elektro.dtu.dk\\
+            \\
+            \\
+            \ISBNNUMBER \\
+          \end{tabular}                      
+        \else 
+          \begin{tabular}{l}
+            \LARGE{\textbf{www.elektro.dtu.dk}}\\
+            \\
+            \large Department of Electrical Engineering\\
+            \large Centre for Electric Technology (CET)\\
+            \large Technical University of Denmark\\
+            \large Elektrovej building 325\\
+            \large DK-2800 Kgs. Lyngby\\
+            \large Denmark\\
+            \hspace*{-0.2cm}\large \begin{tabular}{l l l}
+              Tel:& \quad   &(+45) 45 25 38 00\\
+              Fax:& \quad   &(+45) 45 93 16 34\\
+            \end{tabular}\\
+            \large Email: info@elektro.dtu.dk\\
+            \\
+            \\
+            \ISBNNUMBER \\
+          \end{tabular}
+         \fi }
+        \end{minipage}}
+  \end{pspicture}
+}
+
+%\newcommand*{\coverpages}{\makefrontpage \makefrontpageempty \infopage \clearpage{\thispagestyle{empty}\cleardoublepage}}
+\newcommand*{\coverpages}{\makefrontpage }
+%
+% END - Setup front- and back matter and info-pages about the project
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% TeX-master: "master"
+%%% End:

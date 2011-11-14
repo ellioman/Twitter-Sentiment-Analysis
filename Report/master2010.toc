@@ -1,0 +1,11 @@
+\select@language {english}
+\contentsline {chapter}{Contents}{i}
+\contentsline {chapter}{\numberline {1}Summary}{1}
+\contentsline {chapter}{\numberline {2}Analysis and Design}{3}
+\contentsline {chapter}{\numberline {3}From design to implementation}{5}
+\contentsline {chapter}{\numberline {4}Testing}{7}
+\contentsline {chapter}{\numberline {5}User's guide}{9}
+\contentsline {chapter}{Appendix}{11}
+\contentsline {chapter}{\numberline {A} Printout of all program listings }{11}
+\contentsline {chapter}{\numberline {B} Design of functional and structural tests }{13}
+\contentsline {chapter}{\numberline {C} Listing of the file catalogues on the CD }{15}
