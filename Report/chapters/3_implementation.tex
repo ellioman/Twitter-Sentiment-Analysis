@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter[Implementation]{Implementation}
+\label{chap:Implementation}
+
+This chapter focuses on how the classes and database were implemented in to the system.
+
+\section{Class FootballAnalyzer} \label{sec:FootballAnalyzerImplementation}
+FootballAnalyzer has the following functions:\\
+
+{\bf Public}
+\begin{itemize}
+\item run( self )
+\end{itemize}
+
+{\bf Private}
+\begin{itemize}
+\item \_\_search( self )
+\item \_\_analyze( self, tweets )
+\item \_\_create\_webpage( self, analyzed\_tweets )
+\item \_\_start\_task( self )
+\item \_\_end\_task( self )
+\item \_\_print\_time( self, delay )
+\end{itemize}
+
+The FootballAnalyzer creates an instance of the TwitterAggregator to get the tweets defined in the search parameters. It then creates an instance of the SentimentAnalyzer and makes it analyze all the tweets that were harvested from Twitter to get the sentiment classification of each tweet collected. \\
+
+Finally it creates an instance of the HTMLCreator, sends the data from the aggregator and analyzer and makes it create a webpage that shows the results from the program.\\
+
+To use the FootballAnalyzer you have define search terms and specify how many pages of tweets you want the class to search for and how many tweets should be on each page. With those parameters defined you can create an instance of the class and make it run by calling the run() function.\\
+
+\clearpage
+
+\section{Class TwitterAggregator} \label{sec:TwitterAggregatorImplementation}
+FootballAnalyzer has the following functions:\\
+
+{\bf Public}
+\begin{itemize}
+\item twitter\_search( self, search\_terms, pages, results\_per\_page )
+\item get\_tweets( self, search\_terms, return\_all\_tweets )
+\end{itemize}
+
+{\bf Private}
+\begin{itemize}
+\item \_\_get\_tweet\_ids( self, search\_results )
+\item \_\_is\_english\_tweet( self, tweet )
+\end{itemize}
+
+The TwitterAggregator performs a Twitter GET Search and harvests tweets using the search parameters given to it. It saves the twitter data, from the search, to a redis database and allows the user to get the data by calling the function "get\_tweets()".\\
+
+Redis is a Key-Value type of database. The aggregator saves four different keys in the system. First it saves the search parameter, with spaces replaced by underscores, with the value True so it is easy to see if a search has been performed with those parameters. An example of this would be the key "Manchester\_United" and value "True". Next is saves a key with the search parameter and "\$TweetIds" appended to it and the value is a list of all tweet ids found in the search. Example of this is the key "Manchester\_United\$TweetIds" and value [u'143863607367700480', u'143863033024876544'...]. \\
+
+To keep track of how many times a search has been performed in the program, the aggregator saves a key with the search parameter and "\$SearchCount" appended to it. Example is the key "Manchester\_United\$SearchCount" and value 5. Finally, to get the data from each tweet id, the aggregator saves each tweet id with the name "ID\$" and the id appended to the name. The value is a list which contains the tweet text, username and a URL to the profile picture of the user who created the tweet. An example would be the key "ID\$143863033024876544" and value ["Manchester United won today. Great!",\\ 'http://a1.twimg.com/sticky/default\_profile\_images/default\_profile\_2\_normal.png', 'velvetdismality']. \\
+
+To use the TwitterAggregator you create an instance of the aggregator and call the twitter\_search() function with the search parameters, how many pages and number of tweets requested as parameters. Then to get the tweets collected, you call the get\_tweets() function with the search terms you want data from and True or False depending on whether you want all tweets with that search term or just the tweets harvested in the last run.\\
+
+\section{Class SentimentAnalyzer} \label{sec:SentimentAnalyzerImplementation}
+FootballAnalyzer has the following functions:\\
+
+{\bf Public}
+\begin{itemize}
+\item analyze( self, data )
+\item get\_analysis\_result( self, data\_to\_get )
+\item show\_most\_informative\_features( self, amount )
+\end{itemize}
+
+{\bf Private}
+\begin{itemize}
+\item \_\_init\_naive\_bayes( self )
+\item \_\_check\_word( self, word )
+\item \_\_analyze\_tweet( self, tweet )
+\item \_\_analyse\_using\_naive\_bayes( self, data )
+\end{itemize} 
+
+The SentimentAnalyzer uses the Naive Bayes classifier, that is included in the Natural Language toolkit, to classify tweets. It trains the classifier so that it can determine whether a tweet is positive, negative or neutral. The class opens up three different files, titled "tweets\_positive", "tweets\_negative", "tweets\_neutral", gets the text and places it in the classifier. The training data used that was manually categorized by the author and contains over 700 lines of words and sentences. The data was taken from Tweets harvested while creating the program and from football message boards. \\
+
+When doing an analysis the SentimentAnalyzer removes known stop-words, all links found and words that have less than 3 letters. It does so by calling the check\_word() function, for each word, to see if it should include the word or not.\\
+
+To use the SentimentAnalyzer one has to simply create an instance of it and send a list of tweets to the analyze() function which returns the list with each tweet classified.
+
+\clearpage
+
+\section{Class HTMLCreator} \label{sec:HTMLCreatorImplementation}
+FootballAnalyzer has the following functions:\\
+
+{\bf Public}
+\begin{itemize}
+\item create\_html( self )
+\end{itemize}
+
+{\bf Private}
+\begin{itemize}
+\item \_\_create\_stats\_info( self )
+\item \_\_create\_tweet\_list( self )
+\item \_\_create\_word\_cloud( self )
+\end{itemize}
+
+The HTMLCreator creates a HTML webpage that displays statistics, word cloud and a list of all tweets harvested. The class opens a html template which has all the markup for the webpage and stores it in a string. It takes the statistics given and puts them in a div element with the id "stats".\\
+
+The HTMLCreator then creates a word cloud of the 30 most frequent words in the tweets found by the aggregator, each word within a <li></li> element with an appropriate css class and places them in the unordered list that has the class "word-cloud". The class for each word is determined by calculating how many times the word has appeared and scaled so that it is between 1 and 25.\\
+
+The class then creates a list of tweets on the webpage. The webpage shows three tweets per line and assigns each tweet with the class "left-tweets" or "right-tweets" depending on where it should be shown. It also creates an extra div element to color the background of each tweet, green, red or white depending on the results from the classification from the SentimentAnalyzer. \\
+
+A screenshot of the webpage can be seen in chapter 4.2.

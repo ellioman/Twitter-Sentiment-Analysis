@@ -3,98 +3,200 @@
 """
 twitter_aggregator.py
 
-Created by Elvar Örn Unnþórsson on 2011-09-27.
-Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+Created by Elvar Orn Unnthorsson on 07-12-2011
+Copyright (c) 2011 ellioman inc. All rights reserved.
 """
 
+import string
 import sys
 import os
+import re
 import datetime
 import twitter
-import thread
 import time
+import redis
 from os.path import join as pjoin
+import ast
 
 
-class twitter_aggregator:
+class TwitterAggregator:
+	
+	"""
+	TwitterAggregator performs a Twitter GET Search and harvests tweets using the search parameters 
+	given to it. It saves the twitter data, from the search, to a redis database and allows the user
+	to get the data by calling the function "get_tweets()".
+	"""
+	
 	def __init__( self ):
-		self.search_results = []
-		self.english_tweets_count = 0
+		"""
+		Constructs a new TwitterAggregator instance.
+		"""
+		
+		self.redis = redis.Redis()
+		self.info_to_get = ['text', 'profile_image_url', 'from_user']
+		self.search_results = {}
 		self.raw_data_directory_name = "raw_mining_data"
 		self.filtered_data_directory_name = "filtered_mining_data"
-	
+		english_file = pjoin( sys.path[0], "sentiment_word_files", "Nielsen2010Responsible_english.csv")
+		self.analyzeEnglish = dict(map(lambda (w,e): (w, int(e)), \
+									[ line.strip().lower().split('\t') for line in open(english_file) ]))
+		self.tweets_count = 0
 	
 	
 	def twitter_search( self, search_terms = [], pages = 1, results_per_page = 100 ):
-		"""docstring for twitter_search"""
+		"""
+		twitter_search( self, search_terms = [], pages = 1, results_per_page = 100 ):
+		Input: search_terms. A list of search terms to for searching Twitter.
+		Input: pages. A Number that determines how many pages of tweets to search for.
+		Input: results_per_page. A Number which determines how many tweet results should be on each page.
+		Searches twitter for the things listed in the search_terms list and saves 
+		the data collected, in a Redis database.
+		"""
+		
 		if search_terms == []: return ''
 		
 		self.pages = pages
 		self.results_per_page = results_per_page
-		twitter_search = twitter.Twitter(domain="search.twitter.com")
+		twitter_search = twitter.Twitter( domain="search.twitter.com" )
 		search_results = []
-		done_searching = False
 		
-		def print_time( delay ):
-			while done_searching == False:
-				time.sleep(delay)
-				print "."
-		
-		thread.start_new_thread( print_time, ( 0.5, ) )
-		
-		for term in search_terms:
-			for page in range(1,pages+1):
-				self.search_results.append(twitter_search.search(q=term, rpp=results_per_page, page=page))
-		
-		done_searching = True
-	
-	
-	
-	def get_data(self, data_to_get = []):
-		"""docstring for get_data"""
-		tweet_list = []
-		for search_result in self.search_results:
-			for tweet in range( len(search_result['results']) ):
-				tweet_data = []
+		try:
+			# For each search term...
+			for term in search_terms:
+				results = []
+				for page in range( 1, pages+1 ):
+					results.append(twitter_search.search( q=term, rpp=results_per_page, page=page, result_type="recent" ) )
+			
+				# Get the tweets from the search
+				new_tweets_ids = self.__get_tweet_ids( search_results=results )
 				
-				for data in data_to_get:
-					data_to_append = search_result['results'][tweet][data]
-					if (type(data_to_append) == int): tweet_data.append( data_to_append )
-					else: tweet_data.append( data_to_append.encode('ascii', 'ignore') )
+				# Save tweets and other information to the database
+				term_redis_name = term.replace( " ", "_" )
+				term_tweetsIds_name = term_redis_name + "$TweetIds"
+				term_searchcount_name = term_redis_name + "$SearchCount"
+			
+				if self.redis.exists( term_redis_name ):
+					current_tweets_ids = ast.literal_eval( self.redis.get( term_tweetsIds_name ) )
+					current_tweets_ids.append( new_tweets_ids )
+					self.redis.set( term_tweetsIds_name, current_tweets_ids )
+					self.redis.set( term_searchcount_name, int( self.redis.get( term_searchcount_name ) ) + 1 )
+				else:
+					self.redis.set( term_redis_name, True )
+					self.redis.set( term_tweetsIds_name, [new_tweets_ids] )
+					self.redis.set( term_searchcount_name, 1 )
+		
+		except:
+			raise Exception ("Unknown error in TwitterAggregator::twitter_search")
+	
+	
+	def get_tweets( self, search_terms = [], return_all_tweets = True ):
+		""" 
+		get_tweets( self, search_terms = [], return_all_tweets = True ):
+		Input: search_terms. A list of search terms to fetch from the database.
+		Input: return_all_tweets. Boolean that determines wether to get all tweets or from the last search.
+		Fetches from the database each tweet text, username and url to the user's display pictures for each
+		search term given in the "search_term" parameter.
+		Return: A list which contains lists that has each tweet text, username and url to profile picture.
+		"""
+		
+		returnList = []
+		
+		# If the search term list is empty, return an emptylist.
+		if search_terms == []: return []
+		
+		try:
+			# If not then get information about each tweet and put it in a list.
+			for term in search_terms:
+				term_redis_name = term.replace( " ", "_" )
+				# Skip if the search term isn't in the database
+				if not self.redis.exists( term_redis_name ): 
+					print "Error: The search term", term, "does has not been searched for before..."
+					continue
+			
+				term_tweetsIds_name = term_redis_name + "$TweetIds"
+				tweet_searches = ast.literal_eval( self.redis.get(term_tweetsIds_name) )
+			
+				if return_all_tweets:
+					ids = list( set( [ t_id for results in tweet_searches for t_id in results ] ) )
+					tweet_info = [ self.redis.get( t_id ) for t_id in ids ]
 				
-				tweet_list.append(tweet_data)
+					for t in tweet_info:
+						returnList.append( ast.literal_eval( t ) )
+						self.tweets_count += 1
+			
+				else:
+					ids = list( set( [ t_id for t_id in tweet_searches[ len(tweet_searches)-1 ] ] ) )
+					tweet_info = [ self.redis.get( t_id ) for t_id in ids ]
+				
+					for t in tweet_info:
+						returnList.append( ast.literal_eval( t ) )
+						self.tweets_count += 1
+			
+			return returnList
 		
-		return tweet_list
+		except:
+			raise Exception ("Unknown error in TwitterAggregator::__get_tweet_ids")
+			return []
 	
 	
-	
-	def save_data( self, twitter_data, filtered_data ):
-		"""docstring for save_data"""
-		date = str( datetime.datetime.today() )[:-7].split()
-		filename = "Search-date_"+date[0][-2:]+date[0][-5:-3]+date[0][:-6]+"_time_"+date[1][:-6]+date[1][3:5]+date[1][6:]+".txt"
+	def __get_tweet_ids( self, search_results = [] ):
+		"""
+		__get_tweet_ids( self, search_term = "", search_results = [] ):
+		Input: search_results. A list with the JSON results from the Twitter API
+		Fetches the tweet ids from the JSON results.
+		Return: A list containing the ids found.
+		"""
 		
-		raw_file = pjoin(sys.path[0], self.raw_data_directory_name, filename)
-		self.save_to_file(str(twitter_data), raw_file )
+		# Return empty list if the list in the parameter is empty
+		if search_results == []: return []
 		
-		filtered_file = pjoin(sys.path[0], self.filtered_data_directory_name, filename)
-		self.save_to_file(filtered_data, filtered_file )
+		count = 0
+		tweet_ids = []
+		non_english_tweets = 0
 		
-		return raw_file, filtered_file
+		try:
+			# For each search result...
+			for result in search_results:
+			
+				# For each tweet found...
+				for tweet in result['results']:
+					# Skip tweets that are not in english
+					if not self.__is_english_tweet( tweet['text'] ) :
+						continue
+				
+					tweet_info = []
+					# Get each information data that was requested...
+					for fetched_data in self.info_to_get:
+						if ( type(tweet[fetched_data]) == int): tweet_info.append( tweet[fetched_data] )
+						else: tweet_info.append( tweet[fetched_data].encode('ascii', 'ignore') )
+				
+					# Append the information to the gathered list
+					tweet_ids.append( tweet['id_str'] )
+				
+					# Put the tweet info in the database with the string ID as key
+					self.redis.set( tweet['id_str'], tweet_info )
+			return tweet_ids
+		
+		except:
+			raise Exception ("Unknown error in TwitterAggregator::__get_tweet_ids")
+			return []
 	
 	
-	
-	def save_to_file( self, text_to_save = "", path_and_filename = "fileToSave.txt" ):
-		"""This function saves a text string to a file."""
-		f = open(path_and_filename, "wb")
-		f.write(text_to_save)
-		f.close
-
-
-
-if __name__ == '__main__':
-	tweets = twitter_aggregator()
-	tweets.twitter_search( search_terms=['MUFC'], pages=2, results_per_page=2 )
-	print tweets.get_data( ['from_user', 'iso_language_code', 'from_user_id'] )
-	
-
-
+	def __is_english_tweet( self, tweet ):
+		"""
+		__is_english_tweet( self, tweet ):
+		Input: tweet. A string containing a tweet to check.
+		Determines whether a comment is an english one or not. This function 
+		was given to the author by Helgi who is a fellow student at DTU.
+		Return: True if english, False if not not english
+		"""
+		
+		try:
+			lang = sum(map(lambda w: self.analyzeEnglish.get(w, 0), \
+				re.sub(r'[^\w]', ' ', string.lower(tweet)).split()))
+				
+			if lang >= 1.0: return True
+			else: return False
+		except:
+			raise Exception ("Unknown error in TwitterAggregator::__isEnglishTweet")
+			return False

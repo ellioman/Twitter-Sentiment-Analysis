@@ -1,0 +1,129 @@
+body {
+    margin:0 auto 0 auto;
+    font-family: 'lucida grande',trebuchet,'trebuchet ms',verdana,arial,helvetica,sans-serif;
+    font-size: 0.9em;
+	color: #333333;
+	background: #94e4e8 url(html/images/bg.gif) no-repeat top left; 
+}
+
+.top {
+	width: 100%; 
+	margin: 112px auto;
+}
+
+.content {
+	width: 1000px; 
+	background-color: #ffffff; 
+	border-right: 1px solid #cccccc; 
+	border-bottom: 1px solid #cccccc; 
+	padding: 10px 20px 40px 20px; margin: 0 auto;
+	border: 2px solid #000;
+}
+
+.top .content h1 {
+	border-bottom: 1px solid #CCC;
+	width: 500px;
+}
+
+.tweet-positive {
+	padding: 10px 10px 20px 10px;
+	margin-left: 10px;
+	background-color: #e7ffd7; 
+	height: 90px;
+	border: 1px solid #e0e0e0;
+}
+
+.tweet-negative {
+	padding: 10px 10px 20px 10px;
+	background-color: #ffd7d7;
+	height: 90px;
+	border: 1px solid #e0e0e0;
+}
+
+.tweet-neutral {
+	padding: 10px 10px 20px 10px;
+	background-color: #ffffff;
+	height: 90px;
+	border: 1px solid #e0e0e0;
+}
+
+.left-tweets {
+	width:32%;
+}
+
+.right-tweets { 
+	width:32%;
+	float:right;
+	margin-right: 13px;
+}
+
+.right-content { 
+	float:right;
+	width: 100px;
+}
+
+.left-content {
+	
+}
+
+.img { 
+	width: 58px; 
+	float: left; 
+	display: inline;
+	margin-bottom: 5px;
+	padding-top: 7px;
+}
+
+.clear {
+	clear:both;
+	margin-top: 5px;
+}
+
+#stats {
+	padding-left: 25px;
+	width: 300px;
+}
+
+
+ul.search-parameters { 
+	list-style-type: square;
+}
+
+#cloud { 
+	padding: 10px; 
+	line-height: 2em; 
+	text-align: center; 
+	width:550px; 
+	text-align: center; 
+	margin: 0;
+	border: 1px solid #e0e0e0;
+	float: right;
+}
+
+#cloud li { padding: 0px; }
+#cloud li { display: inline; }
+#cloud li.tag1 { font-size: 0.150em; font-weight: lighter; }
+#cloud li.tag2 { font-size: 0.300em; font-weight: lighter; }
+#cloud li.tag3 { font-size: 0.450em; font-weight: lighter; }
+#cloud li.tag4 { font-size: 0.600em; font-weight: lighter; }
+#cloud li.tag5 { font-size: 0.750em; font-weight: lighter; }
+#cloud li.tag6 { font-size: 0.900em; font-weight: normal; }
+#cloud li.tag7 { font-size: 1.050em; font-weight: normal; }
+#cloud li.tag8 { font-size: 1.200em; font-weight: normal; }
+#cloud li.tag9 { font-size: 1.350em; font-weight: normal; }
+#cloud li.tag10 { font-size: 1.500em; font-weight: normal; }
+#cloud li.tag11 { font-size: 1.650em; font-weight: bold; }
+#cloud li.tag12 { font-size: 1.800em; font-weight: bold; }
+#cloud li.tag13 { font-size: 1.950em; font-weight: bold; }
+#cloud li.tag14 { font-size: 2.100em; font-weight: bold; }
+#cloud li.tag15 { font-size: 2.250em; font-weight: bold; }
+#cloud li.tag16 { font-size: 2.400em; font-weight: bolder; }
+#cloud li.tag17 { font-size: 2.550em; font-weight: bolder; }
+#cloud li.tag18 { font-size: 2.700em; font-weight: bolder; }
+#cloud li.tag19 { font-size: 2.850em; font-weight: bolder; }
+#cloud li.tag20 { font-size: 3.000em; font-weight: bolder; }
+#cloud li.tag21 { font-size: 3.150em; font-weight: bolder; }
+#cloud li.tag22 { font-size: 3.300em; font-weight: bolder; }
+#cloud li.tag23 { font-size: 3.250em; font-weight: bolder; }
+#cloud li.tag24 { font-size: 3.600em; font-weight: bolder; }
+#cloud li.tag25 { font-size: 3.750em; font-weight: bolder; }

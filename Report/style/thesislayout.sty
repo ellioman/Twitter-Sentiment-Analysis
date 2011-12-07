@@ -10,12 +10,12 @@
 \ProvidesPackage{style/thesislayout}
 
 %%%%%%%%%%%%%%%%%%%%%%%   page geometry
-\setlength{\parskip}{0.5\baselineskip}
+\setlength{\parskip}{0.5pt}%\baselineskip}
 \setlength{\parindent}{0pt}
 
 %%%% MORE TEXT ON PAGES and no bad boxes
 %% Adjust the pagemargins to double
-\addtolength{\oddsidemargin}	{1cm} 
+\addtolength{\oddsidemargin}	{0cm} 
 \addtolength{\evensidemargin}	{-2cm}
 \addtolength{\textwidth}		{1.2cm}
 \addtolength{\textheight}	{2.5cm} 
@@ -34,12 +34,12 @@
 \addtolength{\headheight}{1.8pt}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\fancyfoot[RO,LE]{\sffamily\bfseries  \thepage/\pageref{fancy:frontend} }
+%\fancyfoot[RO,LE]{\sffamily\bfseries  \thepage/\pageref{fancy:frontend} }
 }
 
 \fancypagestyle{fancytext}{% 
 \fancyhead{} % clear all header fields
-\addtolength{\headheight}{1.8pt}
+\addtolength{\headheight}{-1.8pt}
 \fancyhead[RO,LE]{\nouppercase{\rightmark}}
 \fancyhead[LO,RE]{\nouppercase{\leftmark}}
 \fancyfoot{} % clear all footer fields
@@ -54,43 +54,37 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancyfoot[RO,LE]{\sffamily\bfseries  \thepage/\pageref{fancy:mainend} }
-\markboth{}{}
+%\markboth{}{}
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%   Chapters:
-\ifx\thesislanguage\danishlang
-\renewcommand{\chaptername}{K a p i t e l }
-\renewcommand{\appendixname}{A p p e n d i k s }
-\renewcommand{\nomname}{Nomenklatur}
-\else
 \renewcommand{\chaptername}{C h a p t e r }
 \renewcommand{\appendixname}{A p p e n d i x }
 \renewcommand{\nomname}{Nomenclature}
-\fi
 
 
 \def\@makechapterhead#1{% For fancy chapters
-  \vspace*{50\p@}%
+  %\vspace*{5\p@}%
   {\parindent \z@ \raggedright \normalfont
    \ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
         \large\scshape \@chapapp \space\space \Huge\upshape\thechapter
         \par\nobreak
-        \vskip 20\p@
+        \vskip 2\p@
       \fi
     \fi
     \interlinepenalty\@M
     \flushleft\parbox{\textwidth}{\raggedleft \sffamily\Huge\bfseries  #1 }
      \par\nobreak
-     \vskip 15pt
+     \vskip 1pt
      \hrule height 0.4pt
-    \vskip 65\p@ %length from line to text
+    \vskip 10\p@ %length from line to text
   }
   \thispagestyle{fancychapter}}
 
 \def\@makeschapterhead#1{% For plain chapters in mainmatter to the left
-  \vspace*{50\p@}%
+  %\vspace*{5\p@}%
   {\parindent \z@ \raggedright \normalfont
    \ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
@@ -98,7 +92,7 @@
       	%Style just for preface in mainmatter
 		  \Huge\upshape \phantom{1}  
         	  \par\nobreak
-        	  \vskip 20\p@
+        	  \vskip 2\p@
 		  \interlinepenalty\@M
     		  \flushleft\parbox{\textwidth}{\raggedleft \sffamily\Huge\bfseries  #1 }
     		  \thispagestyle{fancychapter}
@@ -114,9 +108,9 @@
 	\fi
    \fi
     \par\nobreak
-    \vskip 15pt
+    \vskip 1pt
     \hrule height 0.4pt
-    \vskip 65\p@ %length from line to text
+    \vskip 10\p@ %length from line to text
   }
 }
 %
@@ -231,7 +225,7 @@
             \LARGE{\textsf{\textbf{\Subtitle}}}
           \end{flushleft}
           
-          \vspace*{0.05\textheight}
+          %\vspace*{0.05\textheight}
           \textsf{\Large{\projecttype}}
         \end{minipage}}
     \end{pspicture}

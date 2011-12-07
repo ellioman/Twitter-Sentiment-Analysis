@@ -3,64 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/master2010.tex</string>
+	<string>chapters/1_introduction.tex</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
-			<string>file/summary.tex</string>
-			<key>lastUsed</key>
-			<date>2011-10-27T13:59:04Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>file/analysis_and_design.tex</string>
-			<key>lastUsed</key>
-			<date>2011-10-28T15:04:07Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>file/from_design_to_implementation.tex</string>
-			<key>lastUsed</key>
-			<date>2011-10-28T15:04:07Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>file/testing.tex</string>
-			<key>lastUsed</key>
-			<date>2011-10-27T13:59:04Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>file/users_guide.tex</string>
-			<key>lastUsed</key>
-			<date>2011-10-28T15:04:10Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>file/app1.tex</string>
-			<key>lastUsed</key>
-			<date>2011-10-27T13:53:14Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>file/app2.tex</string>
-			<key>lastUsed</key>
-			<date>2011-10-27T13:50:50Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>file/app3.tex</string>
-			<key>lastUsed</key>
-			<date>2011-10-27T13:50:50Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
 			<string>master2010.tex</string>
 			<key>lastUsed</key>
-			<date>2011-10-28T15:04:10Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2011-12-06T23:26:30Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -86,31 +36,55 @@
 			<key>lastUsed</key>
 			<date>2011-10-27T13:47:09Z</date>
 		</dict>
+		<dict>
+			<key>filename</key>
+			<string>chapters/1_introduction.tex</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T23:26:34Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>chapters/2_design_of_the_program.tex</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T23:26:34Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>chapters/3_implementation.tex</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T23:24:10Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>chapters/4_results.tex</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T23:26:12Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>chapters/appendix1.tex</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T02:46:39Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>chapters/appendix2.tex</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T02:58:55Z</date>
+		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>217</integer>
 	<key>metaData</key>
 	<dict>
-		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/analysis_and_design.tex</key>
+		<key>chapters/1_introduction.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>23</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app1.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>11</integer>
+				<integer>0</integer>
 				<key>line</key>
 				<integer>1</integer>
 			</dict>
@@ -119,151 +93,104 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app2.tex</key>
+		<key>chapters/2_design_of_the_program.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>16</integer>
+				<integer>9</integer>
 				<key>line</key>
-				<integer>2</integer>
+				<integer>50</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app3.tex</key>
+		<key>chapters/3_implementation.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>16</integer>
+				<integer>15</integer>
 				<key>line</key>
-				<integer>2</integer>
+				<integer>81</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/from_design_to_implementation.tex</key>
+		<key>chapters/4_results.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>23</integer>
+				<integer>15</integer>
 				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>3</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>23</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-		</dict>
-		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/summary.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>13</integer>
-				<key>line</key>
-				<integer>2</integer>
+				<integer>12</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/testing.tex</key>
+		<key>chapters/appendix1.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>23</integer>
+				<integer>30</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>11</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/users_guide.tex</key>
+		<key>chapters/appendix2.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>23</integer>
+				<integer>58</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>827</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>808</integer>
 		</dict>
-		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/master2010.tex</key>
+		<key>master2010.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>47</integer>
 				<key>line</key>
-				<integer>20</integer>
+				<integer>12</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-		</dict>
-		<key>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/style/thesislayout.sty</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>41</integer>
-				<key>line</key>
-				<integer>494</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>447</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/master2010.tex</string>
-		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/style/thesislayout.sty</string>
-		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/summary.tex</string>
-		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/analysis_and_design.tex</string>
-		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/from_design_to_implementation.tex</string>
-		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/testing.tex</string>
-		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/users_guide.tex</string>
-		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app1.tex</string>
-		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app2.tex</string>
-		<string>DTU/02115 Java Programming/Assignment 1/MIKTEXreport_2010_uk_dk/file/app3.tex</string>
+		<string>master2010.tex</string>
+		<string>chapters/1_introduction.tex</string>
+		<string>chapters/2_design_of_the_program.tex</string>
+		<string>chapters/3_implementation.tex</string>
+		<string>chapters/4_results.tex</string>
+		<string>chapters/appendix1.tex</string>
+		<string>chapters/appendix2.tex</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
-	<true/>
+	<false/>
 	<key>windowFrame</key>
-	<string>{{528, 19}, {1069, 1009}}</string>
+	<string>{{322, 43}, {1016, 1015}}</string>
 </dict>
 </plist>

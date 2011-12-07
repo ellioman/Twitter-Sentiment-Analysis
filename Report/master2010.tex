@@ -2,9 +2,11 @@
 %  Thesis template file  prepared by:
 %  Thyge Knüppel, tkn@elektro.dtu.dk, DTU Elektro, May 2008
 %  Based on the work of Jan Larsen, IMM, DTU (cf. http://www2.imm.dtu.dk/teaching/phd/)
-%
+% 
 %  CET June 2010 edited Charlotte K. Madsen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Hand-in code: 4282
 
 %%%%%% Compilation: 
 % compilation using latex (i.e. via a ps file)
@@ -24,14 +26,14 @@
                          %in thesislayout.sty as necessary
 \def\ThesisAuthorForHyperref{Elvar Orn Unnthorsson, 101403}%list of authors for pdf
                                 %properties. Multiple authors separated by ","
-\def\ThesisTitle{A simple Cinema Booking System} %project title
-\def\Subtitle{02115 Java Programming} %subtitle - if any
-\def\thesiskeywords{latex template, other keywords} %keywords for the pdf file
+\def\ThesisTitle{Sentiment Analysis Of\\ Football Tweets} %project title
+\def\Subtitle{02820 Python Programming} %subtitle - if any
+\def\thesiskeywords{Twitter, Tweets, Sentiment, Analysis, Football} %keywords for the pdf file
 \def\thesissubject{} %only for pdf properties - doesn't appear on printed
                      %versions
 \def\Supervisor{Supervisor 1\\Supervisor 2} %list of supervisors. multiple
                                 %supervisors are separated by "\\"
-\def\projecttype{2. November 2011} %type of project (see README file
+\def\projecttype{7. December 2011} %type of project (see README file
                                 %for explanation)
 \def\ISBNNUMBER{} %type \ISBNNUMBER{ISBN: xxx} if your project has one
 \def\DatePublished{Date published} %date of publication
@@ -69,7 +71,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{document}
+\begin{document}
 
 %%%%%%%%%%%%%%%%% Edit ONLY for printing type:
 % Front matter:
@@ -77,7 +79,7 @@
 
   \ifx\thesisversion\printversion
 	% for final version include standard dtu cover pages
-	\pagenumbering{alph}%dummy numbering for pdf-file (numbering set as a
+	\pagenumbering{alpha}%dummy numbering for pdf-file (numbering set as a
                     %pdf-property and is NOT visible on the document). The
                     %hyperref package complains if duplicate numbering exists
 	\coverpages    %generates the first four pages (thesislayout.sty)
@@ -133,9 +135,10 @@
 							%'fancyplain' gives right-left numbers
 	%\cleardoublepage 
 	\phantomsection  	% makes pdf-hyperref work in adobe
-	\addcontentsline{toc}{chapter}{Contents}
+	\addcontentsline{toc}{chapter}{Table Of Contents}
 \tableofcontents  
-
+\clearpage
+\pagenumbering{arabic}
 %  \ifx\thesisversion\printversion	
 %	\cleardoublepage 	\phantomsection  	% makes pdf-hyperref work in adobe
 %	\ifx\thesislanguage\danishlang
@@ -160,7 +163,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MAIN CHAPTERS INCLUDED FROM FOLDER  "file":
-	\mainmatter %\setcounter{page}{1}\pagenumbering{arabic} if mainmatter fails
+	\mainmatter 
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
 	\pagestyle{fancytext}
 
 % if a chapter is wanted after lists or other unnumbered chapter
@@ -170,16 +175,23 @@
 %	\addcontentsline{toc}{chapter}{Introduction}
 %	\markboth{Preface}{}
 %\input{file/introduction} 
-	
-\input{file/summary}
-\input{file/analysis_and_design}
-\input{file/from_design_to_implementation}
-\input{file/testing}
-\input{file/users_guide}
 
-%\include{file/conclusion}
-%\include{file/...}
-%\input{file/subsection}
+%The report could contain, e.g.:
+%Discussion of the design of the program
+%Description of the implementation.
+%Table or graphical overviews of modules and/or classes
+%Database schema description
+%Description of central parts of the code
+%Screenshots of the program
+%Plots of results
+%Plots of code performance
+
+
+\input{chapters/1_introduction}
+\setcounter{page}{2}
+\input{chapters/2_design_of_the_program}
+\input{chapters/3_implementation}
+\input{chapters/4_results}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -205,23 +217,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % APPENDIX:
-\clearpage{\thispagestyle{empty}\cleardoublepage} 
+\clearpage{\thispagestyle{empty}}%\cleardoublepage} 
 \phantomsection 
 \appendix	
-\ifx\thesislanguage\danishlang
-	\addcontentsline{toc}{chapter}{Appendiks}
-\else
-	\addcontentsline{toc}{chapter}{Appendix}
-\fi
+\addcontentsline{toc}{chapter}{Appendix}
 
-\input{file/app1} 
-\input{file/app2} 
-\input{file/app3} 
+\input{chapters/appendix1}
+\input{chapters/appendix2}
 %\input{file/...}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \label{fancy:mainend} %for 'of page /x'
-\clearpage{\thispagestyle{empty}\cleardoublepage}
+%\clearpage{\thispagestyle{empty}\cleardoublepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BACK MATTER:

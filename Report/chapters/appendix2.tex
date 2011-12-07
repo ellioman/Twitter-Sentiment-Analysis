@@ -1,0 +1,893 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{ Program source code }
+\label{chap:appendix2}
+
+\section{football\_analyzer.py} \label{sec:FootballAnalyzer}
+\begin{verbatim}
+#!/usr/bin/env python
+# encoding: utf-8
+"""
+twitter_sentiment_analysis.py
+
+Created by Elvar Orn Unnthorsson on 07-12-2011
+Copyright (c) 2011 ellioman inc. All rights reserved.
+"""
+
+import sys
+import os
+import twitter
+import nltk
+import thread
+from twitter_aggregator import *
+from html_creator import *
+from sentiment_analyzer import *
+
+class FootballAnalyzer:
+
+  """
+  FootballAnalyzer is searches twitter for tweets, performs a 
+  sentiment analysis of each tweet harvested and creates a webpage,
+  in the folder \"html\" that shows the results.
+  """
+  
+  def __init__( self, search_terms = [], pages = 3, results_per_page = 50 ):
+    """
+    Input: search_terms. A list of search terms to for searching Twitter.
+    Input: pages. A Number that determines how many pages of tweets to search for.
+    Input: results_per_page. A Number which determines how many tweet results 
+           should be on each page.
+    Constructs a new FootballAnalyzer instance.
+    """
+    
+    self.html_filename = "DataMiningResults.html"
+    self.template_filename = "template.html"
+    self.task_finished = False
+    self.search_terms = search_terms
+    self.pages = pages
+    self.results_per_page = results_per_page
+  
+  
+  def run( self ):
+    """
+    run( self ):
+    Runs the football analyzer. Searches, analyzes and creates the webpage.
+    """
+    
+    print "=======================\nData mining starting\n=======================\n"
+    tweets = self.__search()
+    analyzed_tweets = self.__analyze( tweets )
+    self.__create_webpage( analyzed_tweets )
+    
+    print "=======================\nData mining successful\n=======================\n"
+  
+  
+  def __search( self ):
+    """
+    __search( self ):
+    Creates a search aggregator instance and performs a twitter search 
+    using the the search parameters given in the constructor. Returns 
+    a list of the tweets harvested.
+    Return: A list of all tweets harvested.
+    """
+    
+    try:
+      print "Searching..."
+      self.__start_task();
+      self.aggregator = TwitterAggregator()
+      self.aggregator.twitter_search( search_terms = self.search_terms, 
+                                             pages = self.pages, 
+                                  results_per_page = self.results_per_page )
+      
+      tweets = {} 
+      for term in self.search_terms:
+        tweets[term] = self.aggregator.get_tweets( search_terms = [ term ], 
+                                                   return_all_tweets = True  )
+      self.__end_task();
+      print "Search complete"
+      
+      return tweets
+    
+    except:
+      raise Exception ("Unknown error in FootballAnalyzer::__search")
+
+
+
+
+
+
+  def __analyze( self, tweets ):
+    """
+    __analyze( self, tweets ):
+    Input: tweets. A list of tweets strings
+    Creates a sentiment analyzer instance and uses it to analyze each tweet 
+    harvested by the twitter aggregator. it returns a list of the analyzed tweets.
+    Return: A list of the tweets analyzed. 
+    """
+    
+    try:
+      print "Analyzing the data..."
+      self.__start_task();
+      self.analyzer = SentimentAnalyzer()
+      analyzed_tweets = self.analyzer.analyze( tweets )
+      self.__end_task();
+      print "Analyzing complete"
+      
+      self.analyzer.show_most_informative_features( 20 )
+      
+      return analyzed_tweets
+    
+    except:
+      raise Exception ("Unknown error in FootballAnalyzer::__analyze")
+  
+  
+  def __create_webpage( self, analyzed_tweets ):
+    """
+    __create_webpage( self, analyzed_tweets ):
+    Input: analyzed_tweets. A list of tweets strings
+    Creates a webpage with statistics gathered from the tweet aggregator 
+    and analyzer, a word cloud with the 30 most used words in the tweets
+    and list of each tweet harvested which are colored green, red and white 
+    depending on the results from the analyzer.
+    """
+    
+    try:
+      print "Creating HTML page..."
+      self.__start_task();
+      
+      # A Statistic dictionary, 
+      # used to print out the information on the results webpage.
+      stats = {}
+      stats["search_parameters"] = self.search_terms
+      stats["tweets_count"] = self.aggregator.tweets_count
+      stats["positive_count"] = self.analyzer.get_analysis_result( "positive" )
+      stats["negative_count"] = self.analyzer.get_analysis_result( "negative" )
+      stats["neutral_count"] = self.analyzer.get_analysis_result( "neutral" )
+      
+
+      html_page = HTMLCreator( self.html_filename, 
+                               self.template_filename, 
+                               analyzed_tweets, 
+                               stats )
+      html_page.create_html()
+      self.__end_task();
+      
+      print "Creating HTML page complete\n"
+    
+    except:
+      raise Exception ("Unknown error in FootballAnalyzer::__create_webpage")
+  
+  
+  def __start_task( self ):
+    """
+    __start_task( self ):
+    Creates a thread which displays dots while a function 
+    in the FootballAnalyzer is running.
+    """
+    
+    self.task_finished = False
+    thread.start_new_thread( self.__print_time, ( 1.0, ) )
+  
+  
+  def __end_task( self ):
+    """
+    __end_task( self ):
+    Stops the thread created in the __start_task() function.
+    """
+    
+    self.task_finished = True
+    time.sleep( 1.0 )
+  
+  
+  def __print_time( self, delay ):
+    """
+    __print_time( self, delay ):
+    Input: delay. A number which determines how much time should be 
+                  between the dot printing
+    Prints dots while a function in the FootballAnalyzer is running.
+    """
+    
+    while not self.task_finished:
+      print "."
+      time.sleep( delay )
+
+
+
+
+if __name__ == '__main__':
+  search = [ "MUFC LCFC", "Manchester United Liverpool" ]
+  page_per_search = 3
+  results_on_page = 300
+  f = FootballAnalyzer( search_terms = search, 
+                               pages = page_per_search, 
+                    results_per_page = results_on_page )
+  f.run()
+\end{verbatim}
+
+\section{twitter\_aggregator.py} \label{sec:TwitterAggregator}
+\begin{verbatim}
+#!/usr/bin/env python
+# encoding: utf-8
+"""
+twitter_aggregator.py
+
+Created by Elvar Orn Unnthorsson on 07-12-2011
+Copyright (c) 2011 ellioman inc. All rights reserved.
+"""
+
+import string
+import sys
+import os
+import re
+import datetime
+import twitter
+import time
+import redis
+from os.path import join as pjoin
+import ast
+
+
+class TwitterAggregator:
+  
+  """
+  TwitterAggregator performs a Twitter GET Search and harvests tweets
+  using the search parameters given to it. It saves the twitter data,
+  from the search, to a redis database and allows the user to get the
+  data by calling the function "get_tweets()".
+  """
+  
+  def __init__( self ):
+    """
+    Constructs a new TwitterAggregator instance.
+    """
+    
+    self.redis = redis.Redis()
+    self.info_to_get = ['text', 'profile_image_url', 'from_user']
+    self.search_results = {}
+    self.raw_data_directory_name = "raw_mining_data"
+    self.filtered_data_directory_name = "filtered_mining_data"
+    
+    english_file = pjoin( sys.path[0], 
+                          "sentiment_word_files", 
+                          "Nielsen2010Responsible_english.csv")
+    self.analyzeEnglish = dict(map(lambda (w,e): (w, int(e)), \
+              [ line.strip().lower().split('\t') for line in open(english_file) ]))
+    self.tweets_count = 0
+  
+  
+  def twitter_search( self, search_terms = [], pages = 1, results_per_page = 100 ):
+    """
+    twitter_search( self, search_terms = [], pages = 1, results_per_page = 100 ):
+    Input: search_terms. A list of search terms to for searching Twitter.
+    Input: pages. A Number that determines how many pages of tweets to search for.
+    Input: results_per_page. Number of tweets results on each page.
+    Searches twitter for the things listed in the search_terms list and saves 
+    the data collected, in a Redis database.
+    """
+    
+    if search_terms == []: return ''
+    
+    self.pages = pages
+    self.results_per_page = results_per_page
+    twitter_search = twitter.Twitter( domain="search.twitter.com" )
+    search_results = []
+    
+    try:
+      # For each search term...
+      for term in search_terms:
+        results = []
+        for page in range( 1, pages+1 ):
+          results.append(twitter_search.search( q = term, 
+                                              rpp = results_per_page, 
+                                             page = page, 
+                                      result_type = "recent" ) )
+        
+        # Get the tweets from the search
+        new_tweets_ids = self.__get_tweet_ids( search_results=results )
+        
+        # Save tweets and other information to the database
+        term_redis_name = term.replace( " ", "_" )
+        term_tweetsIds_name = term_redis_name + "$TweetIds"
+        term_searchcount_name = term_redis_name + "$SearchCount"
+        
+
+
+        if self.redis.exists( term_redis_name ):
+          current_tweets_ids = ast.literal_eval( 
+                                    self.redis.get( term_tweetsIds_name ) )
+          current_tweets_ids.append( new_tweets_ids )
+          self.redis.set( term_tweetsIds_name, current_tweets_ids )
+          self.redis.set( term_searchcount_name, 
+                          int( self.redis.get( term_searchcount_name ) ) + 1 )
+        else:
+          self.redis.set( term_redis_name, True )
+          self.redis.set( term_tweetsIds_name, [new_tweets_ids] )
+          self.redis.set( term_searchcount_name, 1 )
+    
+    except:
+      raise Exception ("Unknown error in TwitterAggregator::twitter_search")
+  
+  
+  def get_tweets( self, search_terms = [], return_all_tweets = True ):
+    """ 
+    get_tweets( self, search_terms = [], return_all_tweets = True ):
+    Input: search_terms. A list of search terms to fetch from the database.
+    Input: return_all_tweets. Boolean to say wether to get all or last tweets.
+    Fetches from the database each tweet text, username and url to the user's 
+    display pictures for each search term given in the "search_term" parameter.
+    Return: A list which contains lists that has each tweet text, 
+            username and url to profile picture.
+    """
+    
+    returnList = []
+    
+    # If the search term list is empty, return an emptylist.
+    if search_terms == []: return []
+    
+    try:
+      # If not then get information about each tweet and put it in a list.
+      for term in search_terms:
+        term_redis_name = term.replace( " ", "_" )
+        # Skip if the search term isn't in the database
+        if not self.redis.exists( term_redis_name ): 
+          print "Error: The search term", term, "has not been searched for before..."
+          continue
+        
+        term_tweetsIds_name = term_redis_name + "$TweetIds"
+        tweet_searches = ast.literal_eval( self.redis.get(term_tweetsIds_name) )
+        
+        if return_all_tweets:
+          ids = list( set( [ t_id 
+                             for results in tweet_searches 
+                             for t_id in results ] ) )
+          tweet_info = [ self.redis.get( t_id ) for t_id in ids ]
+          
+          for t in tweet_info:
+            returnList.append( ast.literal_eval( t ) )
+            self.tweets_count += 1
+        
+        else:
+          ids = list( set( [ t_id 
+                             for t_id in tweet_searches[ len(tweet_searches)-1 ] ] ) )
+          tweet_info = [ self.redis.get( t_id ) for t_id in ids ]
+
+          for t in tweet_info:
+            returnList.append( ast.literal_eval( t ) )
+            self.tweets_count += 1
+      
+      return returnList
+    
+    except:
+      raise Exception ("Unknown error in TwitterAggregator::__get_tweet_ids")
+      return []
+  
+  
+  def __get_tweet_ids( self, search_results = [] ):
+    """
+    __get_tweet_ids( self, search_term = "", search_results = [] ):
+    Input: search_results. A list with the JSON results from the Twitter API
+    Fetches the tweet ids from the JSON results.
+    Return: A list containing the ids found.
+    """
+    
+    # Return empty list if the list in the parameter is empty
+    if search_results == []: return []
+    
+    count = 0
+    tweet_ids = []
+    non_english_tweets = 0
+    
+    try:
+      # For each search result...
+      for result in search_results:
+      
+        # For each tweet found...
+        for tweet in result['results']:
+          # Skip tweets that are not in english
+          if not self.__is_english_tweet( tweet['text'] ) :
+            continue
+            
+          tweet_info = []
+
+
+          # Get each information data that was requested...
+          for fetched_data in self.info_to_get:
+            if ( type(tweet[fetched_data]) == int): 
+              tweet_info.append( tweet[fetched_data] )
+            else: 
+              tweet_info.append( tweet[fetched_data].encode('ascii', 'ignore') )
+            
+          # Append the information to the gathered list
+          tweet_ids.append( tweet['id_str'] )
+          
+          # Put the tweet info in the database with the string ID as key
+          self.redis.set( tweet['id_str'], tweet_info )
+      return tweet_ids
+    
+    except:
+      raise Exception ("Unknown error in TwitterAggregator::__get_tweet_ids")
+      return []
+  
+  
+  def __is_english_tweet( self, tweet ):
+    """
+    __isEnglishTweet( self, tweet ):
+    Input: tweet. A string containing a tweet to check.
+    Determines whether a comment is an english one or not. This function 
+    was given to the author by Helgi who is a fellow student at DTU.
+    Return: True if english, False if not not english
+    """
+    
+    try:
+      lang = sum(map(lambda w: self.analyzeEnglish.get(w, 0), \
+        re.sub(r'[^\w]', ' ', string.lower(tweet)).split()))
+        
+      if lang >= 1.0: return True
+      else: return False
+    except:
+      raise Exception ("Unknown error in TwitterAggregator::__isEnglishTweet")
+      return False
+
+
+
+
+
+
+
+
+
+\end{verbatim}
+
+\section{sentiment\_analyzer.py} \label{sec:SentimentAnalyzer}
+\begin{verbatim}
+#!/usr/bin/env python
+# encoding: utf-8
+"""
+sentiment_analyzer.py
+
+Created by Elvar Orn Unnthorsson on 07-12-2011
+Copyright (c) 2011 ellioman inc. All rights reserved.
+"""
+
+import sys
+import os
+from os.path import join as pjoin
+import nltk
+from nltk.classify import NaiveBayesClassifier
+from nltk.corpus import stopwords
+import codecs
+import re
+
+class SentimentAnalyzer:
+
+  """
+  SentimentAnalyzer trains a Naive Bayes classifier so that it can determine
+  whether a tweet is positive, negative or neutral. It uses training data that
+  was manually categorized by the author. The analyze function should be used
+  to classify a list of tweets to analyze.
+  """
+
+  def __init__( self ):
+    """
+    Constructs a new SentimentAnalyzer instance.
+    """
+
+    self.results = { "positive": 0, "negative": 0, "neutral": 0}
+    self.data = {}
+    self.min_word_length = 3
+
+    self.stopSet = set(stopwords.words('english'))
+    extra_stopwords = ["he's", "she's", "RT" ]
+    for stopword in extra_stopwords: self.stopSet.add( stopword )
+
+    # Naive Bayes initialization
+    self.__init_naive_bayes()
+
+
+
+
+
+  def analyze(self, data):
+    """
+    analyze(self, data):
+    Input: data. A list of tweets to analyze.
+    Takes a list of tweets and uses sentiment analysis to determine whether 
+    each tweet is positive, negative or neutral.
+    Return: List with each tweet categorized with the proper sentiment value.
+    """
+
+    return self.__analyse_using_naive_bayes( data )
+
+
+  def get_analysis_result(self, data_to_get):
+    """
+    get_analysis_result(self, data_to_get):
+    Input: data_to_get. The statistic to get from the results dictionary.
+    Gets the count of either positive, negative or neutral from the results 
+    dictionary after doing an analysis. 
+    Return: The count of positive, negative or positive tweets found.
+    """
+
+    return self.results[data_to_get]
+
+
+  def show_most_informative_features( self, amount ):
+    """
+    show_most_informative_features( self, amount ):
+    Input: amount. How many features should the function display.
+    Displays the most informative features in the classifier used
+    to classify each tweet.
+    """
+
+    self.classifier.show_most_informative_features( amount )
+
+
+  def __init_naive_bayes( self ):
+    """
+    __init_naive_bayes( self ):
+    Gets the data from the positive, negative and neutral text files.
+    Creates and trains the Naive Bayes classifier, using the data, so 
+    that it can learn what constitutes a positive, negative or neutral tweet.
+    """
+
+    try:
+      pos_file = pjoin( sys.path[0], "sentiment_word_files", "tweets_positive.txt")
+      f = codecs.open( pos_file, mode="rU", encoding='utf-8')
+      positive = [ line.lower().replace("\n" , " ") for line in f ]
+      positive = "".join(word[:] for word in positive).split()
+      f.close
+
+      neu_file = pjoin( sys.path[0], "sentiment_word_files", "tweets_neutral.txt")
+      f = codecs.open( neu_file, mode="rU", encoding='utf-8')
+      neutral = [ line.lower().replace("\n" , " ") for line in f ]
+      neutral = "".join(word[:] for word in neutral).split()
+      f.close
+
+      neg_file = pjoin( sys.path[0], "sentiment_word_files", "tweets_negative.txt")
+      f = codecs.open( neg_file, mode="rU", encoding='utf-8')
+      negative = [ line.lower().replace("\n" , " ") for line in f ]
+      negative = "".join(word[:] for word in negative).split()
+      f.close
+
+      posfeats = [( dict( { word.lower() : True } ), 'pos' ) 
+                    for word in positive if self.__check_word( word ) ]
+      neufeats = [( dict( { word.lower() : True } ), 'neu' ) 
+                    for word in neutral if self.__check_word( word ) ]
+      negfeats = [( dict( { word.lower() : True } ), 'neg' ) 
+                    for word in negative if self.__check_word( word ) ]
+
+      self.classifier = NaiveBayesClassifier.train( posfeats + neufeats + negfeats )
+
+    except:
+      raise Exception ("Unknown error in SentimentAnalyzer::__init_naive_bayes")
+  
+  
+  def __check_word( self, word ):
+    """
+    __check_word( self, word ):
+    Input: word. The word to check.
+    Looks at a word and determines whether that should be used in the classifier.
+    Return: True if the word should be used, False if not.
+    """
+    if word in self.stopSet \
+      or len(word) < self.min_word_length \
+      or word[0] == "@" \
+      or word[0] == "#" \
+      or word[:4] == "http":
+        return False
+    else:
+      return True
+
+
+
+
+
+
+
+
+  def __analyze_tweet(self, tweet):
+    """
+    __analyze_tweet(self, tweet):
+    Input: tweet. The tweet that should be analyzed.
+    Analyses a tweet using the created Naive Bayes classifier.
+    Return: The results fromt the classifier. Possible results: 'pos', 'neg' or 'neu'
+    """
+    try:
+      tweet_features = dict([ (word, True) 
+              for word in tweet.lower().split() 
+              if self.__check_word( word ) ] )
+      return self.classifier.classify( tweet_features )
+    
+    except:
+      raise Exception ("Unknown error in SentimentAnalyzer::__analyze_tweet")
+      return 'err'
+
+
+  def __analyse_using_naive_bayes(self, data):
+    """
+    __analyse_using_naive_bayes(self, data):
+    Input: data. A list of tweets to analyze.
+    Takes a list of tweets and uses sentiment analysis to determine 
+    whether each tweet is positive, negative or neutral.
+    Return: A list of the tweets analyzed.
+    """
+    analyzed_data = {}
+    try:
+      for search_term, tweet_data in data.iteritems():
+        self.results[search_term + "_positive"] = 0
+        self.results[search_term + "_negative"] = 0
+        self.results[search_term + "_neutral"] = 0
+        
+        search_term_data = []
+        for data in tweet_data:
+          temp_data = data
+          result = self.__analyze_tweet( data[0] )
+          temp_data.append( result )
+          search_term_data.append( temp_data )
+          
+          if (result == 'pos'): self.results[search_term + "_positive"] += 1
+          elif (result == 'neg'): self.results[search_term + "_negative"] += 1
+          elif (result == 'neu'): self.results[search_term + "_neutral"] += 1
+        
+        analyzed_data[search_term] = search_term_data
+        self.results["positive"] += self.results[search_term + "_positive"]
+        self.results["negative"] += self.results[search_term + "_negative"]
+        self.results["neutral"] += self.results[search_term + "_neutral"]
+      
+      return analyzed_data
+    
+    except:
+      raise Exception("Unknown error in SentimentAnalyzer::__analyse_using_naive_bayes")
+      return analyzed_data
+\end{verbatim}
+
+\section{html\_creator.py} \label{sec:HTMLCreator}
+\begin{verbatim}
+#!/usr/bin/env python
+# encoding: utf-8
+"""
+html_creator.py
+
+Created by Elvar Orn Unnthorsson on 07-12-2011
+Copyright (c) 2011 ellioman inc. All rights reserved.
+"""
+
+import sys
+import os
+import nltk
+import random
+from cgi import escape
+from os.path import join as pjoin
+from mako.template import Template
+
+
+class HTMLCreator(object):
+
+  """
+  HTMLCreator creates a HTML webpage that displays statistics, word cloud
+  and a list of all tweets harvested. Must provide the class with the following:
+  * Name of the html page to create
+  * Name of the template for the html to follow. The template must have: 
+      * <ul id="cloud"> to place the word cloud
+      * <div class="tweets"> to place the tweets
+  * Twitter data consisting of list of [tweet text, profile pic, user name] lists
+  """
+
+  def __init__(self, page_name, template_name, twitter_data, stats):
+    """
+    Constructs a new HTMLCreator instance.
+    """
+
+    super(HTMLCreator, self).__init__()
+    self.page_name = page_name
+    self.template_name = template_name
+    self.twitter_data = twitter_data
+    self.tweets = ""
+    self.word_cloud = ""
+    self.stats_html = ""
+    self.word_cloud_min_frequency = 5
+    self.word_cloud_min_font_size = 1
+    self.word_cloud_max_font_size = 25
+    self.word_cloud_max_words = 30
+    self.word_cloud_min_word_length = 3
+    self.stats = stats
+
+
+  def create_html(self):
+    """
+    create_html(self):
+    Creates the webpage used to show the results 
+    from the twitter search and analysis.
+    """
+    try: 
+      f = open( pjoin(sys.path[0], "html/template", self.template_name), "r")
+      html = f.read()
+      f.close
+
+      # Put the stats in the html
+      self.__create_stats_info()
+      index = html.find('<div id="stats">') + len('<div id="stats">')
+      html_before_stats, html_after_stats = html[:index], html[index:]
+      html = html_before_stats + self.stats_html + html_after_stats
+
+      # Append the word cloud to the html
+      self.__create_word_cloud()
+      index = html.find('<ul id="cloud">') + len('<ul id="cloud">')
+      html_before_cloud, html_after_cloud = html[:index], html[index:]
+      html = html_before_cloud + '\n' + self.word_cloud + html_after_cloud
+
+      # Append the tweets to the html
+      self.__create_tweet_list()
+      index = html.find( '<div class="tweet-container">')
+                         + len('<div class="tweet-container">')
+      html_before_tweets, html_after_tweets = html[:index], html[index:]
+      html = html_before_tweets + self.tweets + html_after_tweets
+
+      # Create and save the html file
+      f = open( pjoin(sys.path[0], "html", self.page_name), "wb")
+      f.write(Template("${data}").render(data=html))
+      f.close()
+
+    except:
+      raise Exception ("Unknown error in HTMLCreator::create_html")
+
+
+    def __create_stats_info(self):
+      """
+      __create_stats_info(self):
+      Creates the statistics part of the webpage.
+      """
+      try:
+        self.stats_html = '\n' + '\t'*6
+        self.stats_html += '<strong>Search parameters</strong>\n'
+        self.stats_html += '\t'*6 + '<br/>\n'
+        self.stats_html += '\t'*6 + '<ul class="search-parameters">\n'
+
+        for term in self.stats["search_parameters"]:
+          self.stats_html += '\t'*7 + '<li>' + term + "</li>\n"
+
+        self.stats_html += '\t'*6 + '</ul>\n'
+        self.stats_html += '\t'*6 + 'Tweets count: '
+        self.stats_html += str(self.stats["tweets_count"]) + '\n'
+        self.stats_html += '\t'*6 + '<br/>\n'
+        self.stats_html += '\t'*6 + 'Positive tweets: '
+        self.stats_html += str(self.stats["positive_count"]) + '\n'
+        self.stats_html += '\t'*6 + '<br/>\n'
+        self.stats_html += '\t'*6 + 'Neutral tweets: '
+        self.stats_html += str(self.stats["neutral_count"]) + '\n'
+        self.stats_html += '\t'*6 + '<br/>'
+        self.stats_html += '\t'*6 + 'Negative tweets: '
+        self.stats_html += str(self.stats["negative_count"]) + '\n'
+        self.stats_html += '\t'*6 + '<br/>'
+
+      except:
+        raise Exception ("Unknown error in HTMLCreator::__create_stats_info")
+
+
+  def __create_tweet_list(self):
+    """
+    __create_tweet_list(self):
+    Creates the tweet listing part of the webpage.
+    """
+
+    count = 1
+    try:
+      # For each result from the search...
+      for search_term, results in self.twitter_data.iteritems():
+        
+        # For each tweet in the results...
+        for tweet_data in results:
+          
+          # Make sure that the comments are in rows of three elements
+          if ( count % 3 == 0 ):
+            self.tweets += '\n' + '\t'*5 + '<div class="left-tweets">\n'
+          else:
+            self.tweets += '\n' + '\t'*5 + '<div class="right-tweets">\n'
+          
+          # See if it's a positive, negative or neutral tweet and 
+          # put appropriate html class for the tweet
+          if ( tweet_data[3] == "pos" ):
+            self.tweets += '\t'*6 + '<div class="tweet-positive">\n'
+          elif ( tweet_data[3] == "neg" ):
+            self.tweets += '\t'*6 + '<div class="tweet-negative">\n'
+          elif ( tweet_data[3] == "neu" ):
+            self.tweets += '\t'*6 + '<div class="tweet-neutral">\n'
+          
+          # Image
+          self.tweets += '\t'*7 + '<div class="img">\n' + '\t'*8
+          self.tweets +='<img src="' + tweet_data[1] + '" width="50px"/>\n'
+          self.tweets += '\t'*7 + '</div>\n'
+          
+          # Author's name
+          self.tweets += '\t'*7 + '<div class="author">\n' + '\t'*8 
+          self.tweets += '<a href="http://twitter.com/#!/' + tweet_data[2]
+          self.tweets += '">' + tweet_data[2] + '</a>\n' + '\t'*7 + '</div>\n' 
+          # Tweet text
+          self.tweets += '\t'*7 + '<div class="text">\n' + '\t'*7 \
+          self.tweets += tweet_data[0] + '\n' + '\t'*7 + '</div>\n' 
+          self.tweets += '\t'*6 + '</div>\n'
+          self.tweets += '\t'*5 + '</div>'
+          
+          if ( count % 3 == 0 ):
+            self.tweets += '\n' + '\t'*5 + '<br class="clear">'
+          count += 1
+
+      self.tweets += '\n' + '\t'*5 + '<br class="clear">'
+
+    except:
+      raise Exception ("Unknown error in HTMLCreator::__create_tweet_list")
+
+
+  def __create_word_cloud( self ):
+    """
+    __create_word_cloud( self ):
+    Creates the word cloud part of the webpage. Takes the 30 most
+    frequent words used and assigns the relevant class to it.
+    Some of the code for this function was taken from the
+    "the\_tweet\_tweet\_tagcloud\_code.py" from the book 
+    "Mining the social web". The code can be found here on github:
+     https://github.com/ptwobrussell/Mining-the-Social-Web
+    """
+
+    MIN_FREQUENCY = self.word_cloud_min_frequency
+    MIN_FONT_SIZE = self.word_cloud_min_font_size
+    MAX_FONT_SIZE = self.word_cloud_max_font_size
+    MAX_WORDS = self.word_cloud_max_words
+    MIN_WORD_LENGTH = self.word_cloud_min_word_length
+
+    try:
+      # Get all words from the tweet search and put them in a list
+      tweets = []
+      for search_term, results in self.twitter_data.iteritems():
+
+        for tweet_data in results:
+          tweet_words = tweet_data[0].split()
+
+          # Append the words in lowercase to remove duplicates
+          for word in tweet_words:
+            tweets.append( word.lower() ) 
+
+      # Compute frequency distribution for the terms
+      fdist = nltk.FreqDist([term for t in tweets for term in t.split()])
+
+      # Customize a list of stop words as needed
+      stop_words = nltk.corpus.stopwords.words('english')
+      stop_words += ['&', '&amp;', '.', '..','...','...', '?', '!']
+      stop_words += [':', '"','&quot;', '(', ')', '()', '-', '--']
+      stop_words += ["RT"] # Common Twitter words
+
+
+      # Create output for the WP-Cumulus tag cloud and sort terms by freq
+      raw_output = sorted([ [term, '', freq] for (term, freq) in fdist.items()
+                  if freq > MIN_FREQUENCY 
+                     and term not in stop_words 
+                     and len(term) >= MIN_WORD_LENGTH], 
+                  key=lambda x: x[2])
+
+      # Scale the font size by the min and max font sizes
+      # Implementation adapted from 
+      # http://help.com/post/383276-anyone-knows-the-formula-for-font-s
+      def weightTermByFreq(f):
+        return (f - min_freq) \
+               * (MAX_FONT_SIZE - MIN_FONT_SIZE) \
+               / (max_freq - min_freq) + MIN_FONT_SIZE
+
+      min_freq = raw_output[0][2]
+      max_freq = raw_output[-1][2]
+      weighted_output = [[i[0], i[1], weightTermByFreq(i[2])] for i in raw_output]
+
+      # Create the html list <li> for the results page
+      myList = []
+      for (tag, n, font_size) in weighted_output:
+        myList.append( '\t'*7 + '<li class="tag%d">%s</li>' % (font_size, tag) )
+
+
+
+      # Minimize the html list to the number specified,
+      # randomize it and add it to the word cloud string
+      myList = myList[-MAX_WORDS:]
+      random.shuffle(myList)
+      self.word_cloud = '\n'.join(tag[:] for tag in myList)
+
+    except:
+      raise Exception ("Unknown error in HTMLCreator::__create_word_cloud")
+\end{verbatim}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.11.30)  14 NOV 2011 23:17
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.11.30)  7 DEC 2011 00:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -628,26 +628,26 @@ Package: style/Mythesis
 ) (./master2010.aux)
 \openout1 = `master2010.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 74.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 72.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 74.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -712,7 +712,7 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 72.
+LaTeX Info: Redefining \subref on input line 74.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -726,7 +726,7 @@ to.pdf>
 (epstopdf)                    size: 23143 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/dtu_informatics_A_U
 K-eps-converted-to.pdf figure/dtu_informatics_A_UK.eps>
-(epstopdf)             \includegraphics on input line 83.
+(epstopdf)             \includegraphics on input line 85.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/dtu_informatics_A_UK-eps-converted-to.pdf, id=1, 291.0875pt x 37.13875p
@@ -737,49 +737,49 @@ File: figure/dtu_informatics_A_UK-eps-converted-to.pdf Graphic file (type pdf)
 File: figure/dtu_A1_UK.pdf Graphic file (type pdf)
 
 <use figure/dtu_A1_UK.pdf>
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 83.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 85.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 83.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 85.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 83.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 83.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 85.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 85.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 83.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 85.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 83.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 85.
 
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 83.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 85.
 
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 83.
+(Font)              <14.4> on input line 85.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 83.
+(Font)              <10> on input line 85.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 83.
-LaTeX Font Info:    Try loading font information for U+msa on input line 83.
+(Font)              <7> on input line 85.
+LaTeX Font Info:    Try loading font information for U+msa on input line 85.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 83.
+LaTeX Font Info:    Try loading font information for U+msb on input line 85.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -796,15 +796,20 @@ Non-PDF special ignored!
 
 {/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
 e/dtu_informatics_A_UK-eps-converted-to.pdf> <./figure/dtu_A1_UK.pdf>] (./maste
-r2010.toc)
+r2010.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 5.
+)
 \tf@toc=\write5
 \openout5 = `master2010.toc'.
 
  [1
 
-] [2
-
-] (./file/summary.tex
+] (./chapters/1_introduction.tex
 Chapter 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <24.88> on input line 2.
@@ -812,67 +817,949 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <20.74> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <17.28> on input line 2.
-) (./file/analysis_and_design.tex [1
 
-] [2
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--19
+
+ []
+
+) (./chapters/2_design_of_the_program.tex [2
+
+
 
 ]
 Chapter 2.
-) (./file/from_design_to_implementation.tex [3] [4
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 9.
+(/usr/local/texlive/2010/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 14--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+
+ []
+
+
+Overfull \hbox (1.69884pt too wide) in paragraph at lines 24--26
+[]\T1/lmr/m/n/10.95 The pro-gram there-fore con-sists of four sep-a-rate Python
+ classes and a Re-dis database.
+ []
+
+[3
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 43--46
+
+ []
+
+<images/ClassOverview.png, id=33, 120.45pt x 93.951pt>
+File: images/ClassOverview.png Graphic file (type png)
+
+<use images/ClassOverview.png>
+Overfull \hbox (30.58089pt too wide) in paragraph at lines 54--55
+ [][] 
+ []
+
+) (./chapters/3_implementation.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4 <./images/ClassOverview.png>]
 Chapter 3.
-) (./file/testing.tex [5] [6
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+[5
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+
+Overfull \hbox (18.51779pt too wide) in paragraph at lines 52--53
+\T1/lmr/m/n/10.95 'http://a1.twimg.com/sticky/default_profile_images/default_pr
+ofile_2_normal.png',
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+[6
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+) (./chapters/4_results.tex [8
 
 ]
 Chapter 4.
-) (./file/users_guide.tex [7] [8
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--11
+
+ []
+
+[9
 
 ]
-Chapter 5.
-) [9] [10
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
+ []
 
-] (./file/app1.tex
+<images/webpage.png, id=56, 1062.97125pt x 958.58125pt>
+File: images/webpage.png Graphic file (type png)
+
+<use images/webpage.png>
+Overfull \hbox (7.35825pt too wide) in paragraph at lines 50--51
+ [][] 
+ []
+
+) [10 <./images/webpage.png (PNG copy)>] (./chapters/appendix1.tex
 Appendix A.
-) (./file/app2.tex [11
 
-] [12
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
-]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+<images/Poster.png, id=60, 511.9125pt x 723.70375pt>
+File: images/Poster.png Graphic file (type png)
+ <use images/Poster.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11
+
+
+]) (./chapters/appendix2.tex [12 <./images/Poster.png>]
 Appendix B.
-) (./file/app3.tex [13] [14
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 6.
+(/usr/local/texlive/2010/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (42.76053pt too wide) in paragraph at lines 33--33
+[]  \T1/lmtt/m/n/10.95 def __init__( self, search_terms = [], pages = 3, result
+s_per_page = 50 ):[] 
+ []
+
+
+Overfull \hbox (25.51433pt too wide) in paragraph at lines 35--35
+[]    \T1/lmtt/m/n/10.95 Input: search_terms. A list of search terms to for sea
+rching Twitter.[] 
+ []
+
+
+Overfull \hbox (77.25293pt too wide) in paragraph at lines 36--36
+[]    \T1/lmtt/m/n/10.95 Input: pages. A Number that determines how many pages 
+of tweets to search for.[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 37--37
+[]    \T1/lmtt/m/n/10.95 Input: results_per_page. A Number which determines how
+ many tweet results[] 
+ []
+
+[13
 
 ]
-Appendix C.
-) [15] [16
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 53--53
+[]    \T1/lmtt/m/n/10.95 Runs the football analyzer. Searches, analyzes and cre
+ates the webpage.[] 
+ []
 
 
-]
+Overfull \hbox (88.7504pt too wide) in paragraph at lines 56--56
+[]    \T1/lmtt/m/n/10.95 print "=======================\nData mining starting\n
+=======================\n"[] 
+ []
+
+
+Overfull \hbox (100.24786pt too wide) in paragraph at lines 61--61
+[]    \T1/lmtt/m/n/10.95 print "=======================\nData mining successful
+\n=======================\n"[] 
+ []
+
+
+Overfull \hbox (8.26813pt too wide) in paragraph at lines 67--67
+[]    \T1/lmtt/m/n/10.95 Creates a search aggregator instance and performs a tw
+itter search[] 
+ []
+
+
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 68--68
+[]    \T1/lmtt/m/n/10.95 using the the search parameters given in the construct
+or. Returns[] 
+ []
+
+
+Overfull \hbox (14.01686pt too wide) in paragraph at lines 77--77
+[]      \T1/lmtt/m/n/10.95 self.aggregator.twitter_search( search_terms = self.
+search_terms,[] 
+ []
+
+
+Overfull \hbox (42.76053pt too wide) in paragraph at lines 79--79
+[]                                  \T1/lmtt/m/n/10.95 results_per_page = self.
+results_per_page )[] 
+ []
+
+
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 83--83
+[]        \T1/lmtt/m/n/10.95 tweets[term] = self.aggregator.get_tweets( search_
+terms = [ term ],[] 
+ []
+
+
+Overfull \hbox (54.258pt too wide) in paragraph at lines 84--84
+[]                                                   \T1/lmtt/m/n/10.95 return_
+all_tweets = True  )[] 
+ []
+
+
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 91--91
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in FootballAnalyzer:
+:__search")[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 102--102
+[]    \T1/lmtt/m/n/10.95 Creates a sentiment analyzer instance and uses it to a
+nalyze each tweet[] 
+ []
+
+
+Overfull \hbox (77.25293pt too wide) in paragraph at lines 103--103
+[]    \T1/lmtt/m/n/10.95 harvested by the twitter aggregator. it returns a list
+ of the analyzed tweets.[] 
+ []
+
+
+Overfull \hbox (8.26813pt too wide) in paragraph at lines 120--120
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in FootballAnalyzer:
+:__analyze")[] 
+ []
+
+
+Overfull \hbox (19.7656pt too wide) in paragraph at lines 127--127
+[]    \T1/lmtt/m/n/10.95 Creates a webpage with statistics gathered from the tw
+eet aggregator[] 
+ []
+
+
+Overfull \hbox (19.7656pt too wide) in paragraph at lines 128--128
+[]    \T1/lmtt/m/n/10.95 and analyzer, a word cloud with the 30 most used words
+ in the tweets[] 
+ []
+
+
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 129--129
+[]    \T1/lmtt/m/n/10.95 and list of each tweet harvested which are colored gre
+en, red and white[] 
+ []
+
+
+Overfull \hbox (60.00673pt too wide) in paragraph at lines 142--142
+[]      \T1/lmtt/m/n/10.95 stats["positive_count"] = self.analyzer.get_analysis
+_result( "positive" )[] 
+ []
+
+
+Overfull \hbox (60.00673pt too wide) in paragraph at lines 143--143
+[]      \T1/lmtt/m/n/10.95 stats["negative_count"] = self.analyzer.get_analysis
+_result( "negative" )[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 144--144
+[]      \T1/lmtt/m/n/10.95 stats["neutral_count"] = self.analyzer.get_analysis_
+result( "neutral" )[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 157--157
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in FootballAnalyzer:
+:__create_webpage")[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 232--232
+[]  \T1/lmtt/m/n/10.95 TwitterAggregator performs a Twitter GET Search and harv
+ests tweets[] 
+ []
+
+
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 233--233
+[]  \T1/lmtt/m/n/10.95 using the search parameters given to it. It saves the tw
+itter data,[] 
+ []
+
+
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 234--234
+[]  \T1/lmtt/m/n/10.95 from the search, to a redis database and allows the user
+ to get the[] 
+ []
+
+[17]
+Overfull \hbox (83.00166pt too wide) in paragraph at lines 253--253
+[]              \T1/lmtt/m/n/10.95 [ line.strip().lower().split('\t') for line 
+in open(english_file) ]))[] 
+ []
+
+
+Overfull \hbox (83.00166pt too wide) in paragraph at lines 257--257
+[]  \T1/lmtt/m/n/10.95 def twitter_search( self, search_terms = [], pages = 1, 
+results_per_page = 100 ):[] 
+ []
+
+
+Overfull \hbox (71.5042pt too wide) in paragraph at lines 259--259
+[]    \T1/lmtt/m/n/10.95 twitter_search( self, search_terms = [], pages = 1, re
+sults_per_page = 100 ):[] 
+ []
+
+
+Overfull \hbox (25.51433pt too wide) in paragraph at lines 260--260
+[]    \T1/lmtt/m/n/10.95 Input: search_terms. A list of search terms to for sea
+rching Twitter.[] 
+ []
+
+
+Overfull \hbox (77.25293pt too wide) in paragraph at lines 261--261
+[]    \T1/lmtt/m/n/10.95 Input: pages. A Number that determines how many pages 
+of tweets to search for.[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 263--263
+[]    \T1/lmtt/m/n/10.95 Searches twitter for the things listed in the search_t
+erms list and saves[] 
+ []
+
+
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 280--280
+[]                                              \T1/lmtt/m/n/10.95 rpp = result
+s_per_page,[] 
+ []
+
+
+Overfull \hbox (14.01686pt too wide) in paragraph at lines 285--285
+[]        \T1/lmtt/m/n/10.95 new_tweets_ids = self.__get_tweet_ids( search_resu
+lts=results )[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 296--296
+[]                                    \T1/lmtt/m/n/10.95 self.redis.get( term_t
+weetsIds_name ) )[] 
+ []
+
+
+Overfull \hbox (54.258pt too wide) in paragraph at lines 300--300
+[]                          \T1/lmtt/m/n/10.95 int( self.redis.get( term_search
+count_name ) ) + 1 )[] 
+ []
+
+
+Overfull \hbox (42.76053pt too wide) in paragraph at lines 307--307
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in TwitterAggregator
+::twitter_search")[] 
+ []
+
+
+Overfull \hbox (8.26813pt too wide) in paragraph at lines 310--310
+[]  \T1/lmtt/m/n/10.95 def get_tweets( self, search_terms = [], return_all_twee
+ts = True ):[] 
+ []
+
+
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 313--313
+[]    \T1/lmtt/m/n/10.95 Input: search_terms. A list of search terms to fetch f
+rom the database.[] 
+ []
+
+
+Overfull \hbox (54.258pt too wide) in paragraph at lines 314--314
+[]    \T1/lmtt/m/n/10.95 Input: return_all_tweets. Boolean to say wether to get
+ all or last tweets.[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 315--315
+[]    \T1/lmtt/m/n/10.95 Fetches from the database each tweet text, username an
+d url to the user's[] 
+ []
+
+
+Overfull \hbox (60.00673pt too wide) in paragraph at lines 316--316
+[]    \T1/lmtt/m/n/10.95 display pictures for each search term given in the "se
+arch_term" parameter.[] 
+ []
+
+
+Overfull \hbox (31.26306pt too wide) in paragraph at lines 327--327
+[]      \T1/lmtt/m/n/10.95 # If not then get information about each tweet and p
+ut it in a list.[] 
+ []
+
+
+Overfull \hbox (94.49913pt too wide) in paragraph at lines 332--332
+[]          \T1/lmtt/m/n/10.95 print "Error: The search term", term, "has not b
+een searched for before..."[] 
+ []
+
+
+Overfull \hbox (65.75546pt too wide) in paragraph at lines 336--336
+[]        \T1/lmtt/m/n/10.95 tweet_searches = ast.literal_eval( self.redis.get(
+term_tweetsIds_name) )[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Overfull \hbox (100.24786pt too wide) in paragraph at lines 350--350
+[]                             \T1/lmtt/m/n/10.95 for t_id in tweet_searches[ l
+en(tweet_searches)-1 ] ] ) )[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 360--360
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in TwitterAggregator
+::__get_tweet_ids")[] 
+ []
+
+
+Overfull \hbox (42.76053pt too wide) in paragraph at lines 367--367
+[]    \T1/lmtt/m/n/10.95 Input: search_results. A list with the JSON results fr
+om the Twitter API[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+Overfull \hbox (65.75546pt too wide) in paragraph at lines 397--397
+[]              \T1/lmtt/m/n/10.95 tweet_info.append( tweet[fetched_data].encod
+e('ascii', 'ignore') )[] 
+ []
+
+
+Overfull \hbox (19.7656pt too wide) in paragraph at lines 402--402
+[]          \T1/lmtt/m/n/10.95 # Put the tweet info in the database with the st
+ring ID as key[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 407--407
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in TwitterAggregator
+::__get_tweet_ids")[] 
+ []
+
+
+Overfull \hbox (19.7656pt too wide) in paragraph at lines 415--415
+[]    \T1/lmtt/m/n/10.95 Determines whether a comment is an english one or not.
+ This function[] 
+ []
+
+
+Overfull \hbox (54.258pt too wide) in paragraph at lines 427--427
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in TwitterAggregator
+::__isEnglishTweet")[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+Overfull \hbox (42.76053pt too wide) in paragraph at lines 463--463
+[]  \T1/lmtt/m/n/10.95 SentimentAnalyzer trains a Naive Bayes classifier so tha
+t it can determine[] 
+ []
+
+
+Overfull \hbox (54.258pt too wide) in paragraph at lines 464--464
+[]  \T1/lmtt/m/n/10.95 whether a tweet is positive, negative or neutral. It use
+s training data that[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 465--465
+[]  \T1/lmtt/m/n/10.95 was manually categorized by the author. The analyze func
+tion should be used[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 493--493
+[]    \T1/lmtt/m/n/10.95 Takes a list of tweets and uses sentiment analysis to 
+determine whether[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 495--495
+[]    \T1/lmtt/m/n/10.95 Return: List with each tweet categorized with the prop
+er sentiment value.[] 
+ []
+
+
+Overfull \hbox (25.51433pt too wide) in paragraph at lines 504--504
+[]    \T1/lmtt/m/n/10.95 Input: data_to_get. The statistic to get from the resu
+lts dictionary.[] 
+ []
+
+
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 505--505
+[]    \T1/lmtt/m/n/10.95 Gets the count of either positive, negative or neutral
+ from the results[] 
+ []
+
+
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 507--507
+[]    \T1/lmtt/m/n/10.95 Return: The count of positive, negative or positive tw
+eets found.[] 
+ []
+
+
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 527--527
+[]    \T1/lmtt/m/n/10.95 Gets the data from the positive, negative and neutral 
+text files.[] 
+ []
+
+
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 528--528
+[]    \T1/lmtt/m/n/10.95 Creates and trains the Naive Bayes classifier, using t
+he data, so[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 529--529
+[]    \T1/lmtt/m/n/10.95 that it can learn what constitutes a positive, negativ
+e or neutral tweet.[] 
+ []
+
+
+Overfull \hbox (83.00166pt too wide) in paragraph at lines 533--533
+[]      \T1/lmtt/m/n/10.95 pos_file = pjoin( sys.path[0], "sentiment_word_files
+", "tweets_positive.txt")[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+Overfull \hbox (77.25293pt too wide) in paragraph at lines 539--539
+[]      \T1/lmtt/m/n/10.95 neu_file = pjoin( sys.path[0], "sentiment_word_files
+", "tweets_neutral.txt")[] 
+ []
+
+
+Overfull \hbox (83.00166pt too wide) in paragraph at lines 545--545
+[]      \T1/lmtt/m/n/10.95 neg_file = pjoin( sys.path[0], "sentiment_word_files
+", "tweets_negative.txt")[] 
+ []
+
+
+Overfull \hbox (14.01686pt too wide) in paragraph at lines 552--552
+[]                    \T1/lmtt/m/n/10.95 for word in positive if self.__check_w
+ord( word ) ][] 
+ []
+
+
+Overfull \hbox (8.26813pt too wide) in paragraph at lines 554--554
+[]                    \T1/lmtt/m/n/10.95 for word in neutral if self.__check_wo
+rd( word ) ][] 
+ []
+
+
+Overfull \hbox (14.01686pt too wide) in paragraph at lines 556--556
+[]                    \T1/lmtt/m/n/10.95 for word in negative if self.__check_w
+ord( word ) ][] 
+ []
+
+
+Overfull \hbox (88.7504pt too wide) in paragraph at lines 558--558
+[]      \T1/lmtt/m/n/10.95 self.classifier = NaiveBayesClassifier.train( posfea
+ts + neufeats + negfeats )[] 
+ []
+
+
+Overfull \hbox (65.75546pt too wide) in paragraph at lines 561--561
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in SentimentAnalyzer
+::__init_naive_bayes")[] 
+ []
+
+
+Overfull \hbox (71.5042pt too wide) in paragraph at lines 568--568
+[]    \T1/lmtt/m/n/10.95 Looks at a word and determines whether that should be 
+used in the classifier.[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+Overfull \hbox (94.49913pt too wide) in paragraph at lines 592--592
+[]    \T1/lmtt/m/n/10.95 Return: The results fromt the classifier. Possible res
+ults: 'pos', 'neg' or 'neu'[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 601--601
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in SentimentAnalyzer
+::__analyze_tweet")[] 
+ []
+
+
+Overfull \hbox (42.76053pt too wide) in paragraph at lines 627--627
+[]          \T1/lmtt/m/n/10.95 if (result == 'pos'): self.results[search_term +
+ "_positive"] += 1[] 
+ []
+
+
+Overfull \hbox (54.258pt too wide) in paragraph at lines 628--628
+[]          \T1/lmtt/m/n/10.95 elif (result == 'neg'): self.results[search_term
+ + "_negative"] += 1[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 629--629
+[]          \T1/lmtt/m/n/10.95 elif (result == 'neu'): self.results[search_term
+ + "_neutral"] += 1[] 
+ []
+
+
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 632--632
+[]        \T1/lmtt/m/n/10.95 self.results["positive"] += self.results[search_te
+rm + "_positive"][] 
+ []
+
+
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 633--633
+[]        \T1/lmtt/m/n/10.95 self.results["negative"] += self.results[search_te
+rm + "_negative"][] 
+ []
+
+
+Overfull \hbox (25.51433pt too wide) in paragraph at lines 634--634
+[]        \T1/lmtt/m/n/10.95 self.results["neutral"] += self.results[search_ter
+m + "_neutral"][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
+Overfull \hbox (111.74533pt too wide) in paragraph at lines 639--639
+[]      \T1/lmtt/m/n/10.95 raise Exception("Unknown error in SentimentAnalyzer:
+:__analyse_using_naive_bayes")[] 
+ []
+
+
+Overfull \hbox (25.51433pt too wide) in paragraph at lines 666--666
+[]  \T1/lmtt/m/n/10.95 HTMLCreator creates a HTML webpage that displays statist
+ics, word cloud[] 
+ []
+
+
+Overfull \hbox (65.75546pt too wide) in paragraph at lines 667--667
+[]  \T1/lmtt/m/n/10.95 and a list of all tweets harvested. Must provide the cla
+ss with the following:[] 
+ []
+
+
+Overfull \hbox (19.7656pt too wide) in paragraph at lines 669--669
+[]  \T1/lmtt/m/n/10.95 * Name of the template for the html to follow. The templ
+ate must have:[] 
+ []
+
+
+Overfull \hbox (71.5042pt too wide) in paragraph at lines 672--672
+[]  \T1/lmtt/m/n/10.95 * Twitter data consisting of list of [tweet text, profil
+e pic, user name] lists[] 
+ []
+
+[26]
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 702--702
+[]      \T1/lmtt/m/n/10.95 f = open( pjoin(sys.path[0], "html/template", self.t
+emplate_name), "r")[] 
+ []
+
+
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 708--708
+[]      \T1/lmtt/m/n/10.95 index = html.find('<div id="stats">') + len('<div id
+="stats">')[] 
+ []
+
+
+Overfull \hbox (8.26813pt too wide) in paragraph at lines 709--709
+[]      \T1/lmtt/m/n/10.95 html_before_stats, html_after_stats = html[:index], 
+html[index:][] 
+ []
+
+
+Overfull \hbox (8.26813pt too wide) in paragraph at lines 715--715
+[]      \T1/lmtt/m/n/10.95 html_before_cloud, html_after_cloud = html[:index], 
+html[index:][] 
+ []
+
+
+Overfull \hbox (31.26306pt too wide) in paragraph at lines 716--716
+[]      \T1/lmtt/m/n/10.95 html = html_before_cloud + '\n' + self.word_cloud + 
+html_after_cloud[] 
+ []
+
+
+Overfull \hbox (19.7656pt too wide) in paragraph at lines 722--722
+[]      \T1/lmtt/m/n/10.95 html_before_tweets, html_after_tweets = html[:index]
+, html[index:][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+Overfull \hbox (8.26813pt too wide) in paragraph at lines 743--743
+[]        \T1/lmtt/m/n/10.95 self.stats_html += '\t'*6 + '<ul class="search-par
+ameters">\n'[] 
+ []
+
+
+Overfull \hbox (48.50926pt too wide) in paragraph at lines 763--763
+[]        \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in HTMLCreator::__
+create_stats_info")[] 
+ []
+
+
+Overfull \hbox (2.5194pt too wide) in paragraph at lines 780--780
+[]          \T1/lmtt/m/n/10.95 # Make sure that the comments are in rows of thr
+ee elements[] 
+ []
+
+
+Overfull \hbox (19.7656pt too wide) in paragraph at lines 782--782
+[]            \T1/lmtt/m/n/10.95 self.tweets += '\n' + '\t'*5 + '<div class="le
+ft-tweets">\n'[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+Overfull \hbox (25.51433pt too wide) in paragraph at lines 784--784
+[]            \T1/lmtt/m/n/10.95 self.tweets += '\n' + '\t'*5 + '<div class="ri
+ght-tweets">\n'[] 
+ []
+
+
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 797--797
+[]          \T1/lmtt/m/n/10.95 self.tweets +='<img src="' + tweet_data[1] + '" 
+width="50px"/>\n'[] 
+ []
+
+
+Overfull \hbox (31.26306pt too wide) in paragraph at lines 802--802
+[]          \T1/lmtt/m/n/10.95 self.tweets += '<a href="http://twitter.com/#!/'
+ + tweet_data[2][] 
+ []
+
+
+Overfull \hbox (54.258pt too wide) in paragraph at lines 803--803
+[]          \T1/lmtt/m/n/10.95 self.tweets += '">' + tweet_data[2] + '</a>\n' +
+ '\t'*7 + '</div>\n'[] 
+ []
+
+
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 817--817
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in HTMLCreator::__cr
+eate_tweet_list")[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29]
+Overfull \hbox (25.51433pt too wide) in paragraph at lines 850--850
+[]      \T1/lmtt/m/n/10.95 fdist = nltk.FreqDist([term for t in tweets for term
+ in t.split()])[] 
+ []
+
+
+Overfull \hbox (25.51433pt too wide) in paragraph at lines 859--859
+[]      \T1/lmtt/m/n/10.95 # Create output for the WP-Cumulus tag cloud and sor
+t terms by freq[] 
+ []
+
+
+Overfull \hbox (54.258pt too wide) in paragraph at lines 860--860
+[]      \T1/lmtt/m/n/10.95 raw_output = sorted([ [term, '', freq] for (term, fr
+eq) in fdist.items()[] 
+ []
+
+
+Overfull \hbox (14.01686pt too wide) in paragraph at lines 868--868
+[]      \T1/lmtt/m/n/10.95 # http://help.com/post/383276-anyone-knows-the-formu
+la-for-font-s[] 
+ []
+
+
+Overfull \hbox (77.25293pt too wide) in paragraph at lines 876--876
+[]      \T1/lmtt/m/n/10.95 weighted_output = [[i[0], i[1], weightTermByFreq(i[2
+])] for i in raw_output][] 
+ []
+
+
+Overfull \hbox (65.75546pt too wide) in paragraph at lines 881--881
+[]        \T1/lmtt/m/n/10.95 myList.append( '\t'*7 + '<li class="tag%d">%s</li>
+' % (font_size, tag) )[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+Overfull \hbox (37.0118pt too wide) in paragraph at lines 892--892
+[]      \T1/lmtt/m/n/10.95 raise Exception ("Unknown error in HTMLCreator::__cr
+eate_word_cloud")[] 
+ []
+
+)
 \tf@thm=\write6
 \openout6 = `master2010.thm'.
 
- (./master2010.aux) ) 
+ [31] (./master2010.aux) ) 
 Here is how much of TeX's memory you used:
- 9465 strings out of 493747
- 132719 string characters out of 3143545
- 245947 words of memory out of 3000000
- 12490 multiletter control sequences out of 15000+200000
- 84557 words of font info for 66 fonts, out of 3000000 for 9000
+ 9607 strings out of 493747
+ 135514 string characters out of 3143545
+ 252973 words of memory out of 3000000
+ 12619 multiletter control sequences out of 15000+200000
+ 111798 words of font info for 88 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 60i,11n,94p,347b,360s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2010/texmf-dist/fonts/enc/dvips/lm/lm-
-ec.enc}</usr/local/texlive/2010/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></u
-sr/local/texlive/2010/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/
-texlive/2010/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/201
-0/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2010/texmf-dis
-t/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2010/texmf-dist/fonts/ty
-pe1/public/lm/lmssbx10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publ
-ic/lm/lmsso12.pfb>
-Output written on master2010.pdf (19 pages, 191469 bytes).
+ 60i,12n,94p,772b,446s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2010/texmf-dist/fonts/enc/dvips/l
+m/lm-ec.enc}{/usr/local/texlive/2010/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<
+/usr/local/texlive/2010/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local
+/texlive/2010/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2
+010/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2010/texmf
+-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2010/texmf-dist/fonts
+/type1/public/lm/lmr17.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publ
+ic/lm/lmss10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/lm/lmss
+12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><
+/usr/local/texlive/2010/texmf-dist/fonts/type1/public/lm/lmsso12.pfb></usr/loca
+l/texlive/2010/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on master2010.pdf (32 pages, 830517 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 167 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

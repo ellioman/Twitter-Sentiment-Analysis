@@ -3,103 +3,268 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>twitter_aggregator.py</string>
+	<string>sentiment_analyzer.py</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
-			<string>word_cloud.css</string>
-			<key>lastUsed</key>
-			<date>2011-09-27T22:32:28Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
 			<string>twitter_aggregator.py</string>
 			<key>lastUsed</key>
-			<date>2011-10-12T17:55:33Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2011-12-06T02:17:56Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
-			<string>twitter_sentiment_analysis.py</string>
+			<string>football_analyzer.py</string>
 			<key>lastUsed</key>
-			<date>2011-10-12T17:55:33Z</date>
+			<date>2011-12-06T02:08:13Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>html_creator.py</string>
 			<key>lastUsed</key>
-			<date>2011-10-12T17:53:14Z</date>
+			<date>2011-12-06T02:32:55Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>sentiment_analyzer.py</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T02:32:55Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>sentiment_word_files/AFINN-111.txt</string>
+			<key>lastUsed</key>
+			<date>2011-12-01T00:49:04Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>html/word_cloud.css</string>
+			<key>lastUsed</key>
+			<date>2011-12-05T23:54:57Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>sentiment_word_files/tweets_negative.txt</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T01:53:11Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>sentiment_word_files/tweets_positive.txt</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T01:46:22Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>sentiment_word_files/tweets_neutral.txt</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T01:46:24Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>html/template/Template.html</string>
+			<key>lastUsed</key>
+			<date>2011-12-06T02:28:17Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>html/main.css</string>
+			<key>lastUsed</key>
+			<date>2011-12-04T21:39:12Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
-	<integer>136</integer>
+	<integer>181</integer>
 	<key>metaData</key>
 	<dict>
+		<key>football_analyzer.py</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>16</integer>
+				<key>line</key>
+				<integer>115</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>115</integer>
+		</dict>
+		<key>html/template/Template.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>20</integer>
+				<key>line</key>
+				<integer>18</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>html/word_cloud.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>8</integer>
+				<key>line</key>
+				<integer>81</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>html_creator.py</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>80</integer>
 				<key>line</key>
-				<integer>112</integer>
+				<integer>27</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>115</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>1</integer>
+				<key>line</key>
+				<integer>21</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>80</integer>
+				<key>line</key>
+				<integer>27</integer>
+			</dict>
+		</dict>
+		<key>sentiment_analyzer.py</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>16</integer>
+				<key>line</key>
+				<integer>18</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>72</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>6</integer>
+				<key>line</key>
+				<integer>18</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>23</integer>
+				<key>line</key>
+				<integer>18</integer>
+			</dict>
+		</dict>
+		<key>sentiment_word_files/tweets_negative.txt</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>34</integer>
+				<key>line</key>
+				<integer>240</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>270</integer>
+		</dict>
+		<key>sentiment_word_files/tweets_neutral.txt</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>40</integer>
+				<key>line</key>
+				<integer>44</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>17</integer>
 		</dict>
+		<key>sentiment_word_files/tweets_positive.txt</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>26</integer>
+				<key>line</key>
+				<integer>272</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>247</integer>
+		</dict>
 		<key>twitter_aggregator.py</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>28</integer>
-				<key>line</key>
-				<integer>48</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>18</integer>
-		</dict>
-		<key>twitter_sentiment_analysis.py</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>87</integer>
-				<key>line</key>
-				<integer>39</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>word_cloud.css</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>61</integer>
-				<key>line</key>
 				<integer>11</integer>
+				<key>line</key>
+				<integer>91</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>53</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>5</integer>
+				<key>line</key>
+				<integer>91</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>15</integer>
+				<key>line</key>
+				<integer>91</integer>
+			</dict>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>twitter_sentiment_analysis.py</string>
+		<string>football_analyzer.py</string>
 		<string>twitter_aggregator.py</string>
+		<string>sentiment_analyzer.py</string>
 		<string>html_creator.py</string>
-		<string>word_cloud.css</string>
+		<string>html/template/Template.html</string>
+		<string>sentiment_word_files/tweets_positive.txt</string>
+		<string>sentiment_word_files/tweets_neutral.txt</string>
+		<string>sentiment_word_files/tweets_negative.txt</string>
+		<string>html/word_cloud.css</string>
 	</array>
 	<key>shellVariables</key>
 	<array>
@@ -113,8 +278,8 @@
 		</dict>
 	</array>
 	<key>showFileHierarchyDrawer</key>
-	<false/>
+	<true/>
 	<key>windowFrame</key>
-	<string>{{4, 0}, {1052, 1028}}</string>
+	<string>{{1056, 0}, {1002, 1058}}</string>
 </dict>
 </plist>

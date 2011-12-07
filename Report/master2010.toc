@@ -1,11 +1,24 @@
 \select@language {english}
-\contentsline {chapter}{Contents}{i}
-\contentsline {chapter}{\numberline {1}Summary}{1}
-\contentsline {chapter}{\numberline {2}Analysis and Design}{3}
-\contentsline {chapter}{\numberline {3}From design to implementation}{5}
-\contentsline {chapter}{\numberline {4}Testing}{7}
-\contentsline {chapter}{\numberline {5}User's guide}{9}
+\contentsline {chapter}{Table Of Contents}{i}
+\contentsline {chapter}{\numberline {1}Introduction}{2}
+\contentsline {chapter}{\numberline {2}Design of the program}{3}
+\contentsline {section}{\numberline {2.1}Class FootballAnalyzer}{3}
+\contentsline {section}{\numberline {2.2}Class TwitterAggregator}{3}
+\contentsline {section}{\numberline {2.3}Class SentimentAnalyzer}{3}
+\contentsline {section}{\numberline {2.4}Class HTMLCreator}{4}
+\contentsline {section}{\numberline {2.5}Overview}{4}
+\contentsline {chapter}{\numberline {3}Implementation}{5}
+\contentsline {section}{\numberline {3.1}Class FootballAnalyzer}{5}
+\contentsline {section}{\numberline {3.2}Class TwitterAggregator}{6}
+\contentsline {section}{\numberline {3.3}Class SentimentAnalyzer}{7}
+\contentsline {section}{\numberline {3.4}Class HTMLCreator}{8}
+\contentsline {chapter}{\numberline {4}Results}{9}
+\contentsline {section}{\numberline {4.1}Most Informative Features}{9}
+\contentsline {section}{\numberline {4.2}Results webpage}{10}
 \contentsline {chapter}{Appendix}{11}
-\contentsline {chapter}{\numberline {A} Printout of all program listings }{11}
-\contentsline {chapter}{\numberline {B} Design of functional and structural tests }{13}
-\contentsline {chapter}{\numberline {C} Listing of the file catalogues on the CD }{15}
+\contentsline {chapter}{\numberline {A} Poster for presentation }{11}
+\contentsline {chapter}{\numberline {B} Program source code }{13}
+\contentsline {section}{\numberline {B.1}football\_analyzer.py}{13}
+\contentsline {section}{\numberline {B.2}twitter\_aggregator.py}{17}
+\contentsline {section}{\numberline {B.3}sentiment\_analyzer.py}{22}
+\contentsline {section}{\numberline {B.4}html\_creator.py}{26}
