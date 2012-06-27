@@ -9,3 +9,5 @@ Student: Elvar Orn Unnthorsson
 
 Project Description:
 Twitter crawler that performs a sentiment analysis to determine whether tweets about something/someone are positive or negative.
+
+The program uses the data structure server Redis (http://redis.io/), to save the data collected. It therefore must be installed and running on the client's computer when using the program. 
