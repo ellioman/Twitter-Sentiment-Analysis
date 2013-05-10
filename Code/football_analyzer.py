@@ -171,7 +171,9 @@ class FootballAnalyzer:
 
 
 if __name__ == '__main__':
-	search = [ "Rooney bad" ]
+	search = sys.argv[1:]
+	if ( len(search) == 0 ): search = ["Wayne Rooney"]
+	
 	page_per_search = 3
 	results_on_page = 10
 	f = FootballAnalyzer( search_terms = search, pages = page_per_search, results_per_page = results_on_page )

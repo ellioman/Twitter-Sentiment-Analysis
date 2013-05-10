@@ -10,4 +10,4 @@ Student: Elvar Orn Unnthorsson
 Project Description:
 Twitter crawler that performs a sentiment analysis to determine whether tweets about something/someone are positive or negative.
 
-The program uses the data structure server Redis (http://redis.io/), to save the data collected. It therefore must be installed and running on the client's computer when using the program. 
+The program uses the data structure server Redis (http://redis.io/), to save the data collected. It therefore must be installed and running (by calling redis-server) on the client's computer when using the program. The program also uses Mako Templates for Python to create a webpage with the results. Make Templates can be downloaded here: http://www.makotemplates.org/download.html
